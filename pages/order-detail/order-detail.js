@@ -1,9 +1,9 @@
 var app = getApp();
 Page({
   data: {
+    orderData: '',
     orderId: '',
     orderDetails: '',
-    orederCode: '865874513',
     copy: '',
   },
   handlePaste(e) {
@@ -23,20 +23,25 @@ Page({
     if(res.status == "SUCCESS") {
       let orderData = res.result;   
       let algorithmProcess = orderData.algorithmProcess.replace(/<[^<>]*>/gi,'');
-      let orderDetails = orderData.orderDetails.join(',');
-      console.log(orderDetails)
+      //let orderDetails = orderData.orderDetails.join(',');
+
+      let orderDetails = orderData.orderDetails;
+      let optString = '';
+      orderDetails.map((item) => {
+        optString += item.questionName+':'+item.rightOptionName + ';';
+      })
       selfObj.setData({
+          orderId: orderData.orderInfo.id,
           orderData : orderData,
-          algorithmProcess: algorithmProcess,
+          algorithmProcess: optString,
           orderDetails: orderDetails
       });
-      console.log(res)
     }
   },
 
   onReady() {
     let param = {
-          id: "H9326808150002"
+          id: "H9326808220001"
         };
     // 获取热门品牌
     app.request.requestGetApi(app.apiUrl1 + 'minbox_orders/show', param, this, this.successFun);
