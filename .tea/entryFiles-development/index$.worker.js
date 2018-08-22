@@ -12,6 +12,7 @@ require('../../pages/todos/todos');
 require('../../pages/add-todo/add-todo');
 require('../../pages/order-center/order-center');
 require('../../pages/help/help');
+require('../../pages/help-detail/help-detail');
 require('../../pages/service/service');
 require('../../pages/order-detail/order-detail');
 require('../../pages/phone-brand/phone-brand');

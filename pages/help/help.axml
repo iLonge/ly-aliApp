@@ -1,17 +1,115 @@
 <view class="helpContainer">
   <!-- 顶部搜索 -->
   <view class="topSearch">
-      <view>您好,</view>
-      <view>我们为您提供更多帮助</view>
+      <view class="topSearchTitle">您好,</view>
+      <view class="topSearchTitle">我们为您提供更多帮助</view>
+      <!-- 搜索输入 -->
+      <view class="searchBox">
+        <view>
+          <image src="../../images/icons/search.png"/>
+          <input type="text" placeholder="请输入关键字词"/>
+        </view>
+      </view>
+  </view>  
+
+  <!-- 回收流程 -->
+  <view class="container">
+    <view class="titleCon"><text>回收流程</text></view>
+    <view class="reyeStep">
+      <view class="stepList">
+        <image src="../../images/icons/searchPhone.png" mode="aspectFit"/>
+        <text>搜索机型</text>
+      </view>
+      <view class="arrow"></view>
+      <view class="stepList">
+        <image src="../../images/icons/getPrice.png" mode="aspectFit"/>
+        <text>获得报价</text>
+      </view>
+      <view class="arrow"></view>
+      <view class="stepList">
+        <image src="../../images/icons/checkSafe.png" mode="aspectFit"/>
+        <text>专业质检</text>
+      </view>
+      <view class="arrow"></view>
+      <view class="stepList">
+        <image src="../../images/icons/getMoney.png" mode="aspectFit"/>
+        <text>快速收款</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 回收常见问题 -->
+  <view class="container">
+    <view class="titleCon"><text>回收常见问题</text></view>
+    <view class="reyeQuestion">
+      
+      <view class="questionItem">
+          <view class="itemType">
+            <image src="../../images/icons/creditCard.png" mode="aspectFit" />
+            <text>信用回收</text>
+          </view>
+          <view class="itemList">
+            <view onTap="viewDetail"><text>只保证图片的短边能完</text></view>
+            <view><text>只保证图片的短</text></view>
+            <view><text>只保证示出来</text></view>
+            <view><text>只保证完全显示出来</text></view>
+          </view>
+      </view>
+      
+      <view class="questionItem">
+          <view class="itemType">
+            <image src="../../images/icons/express.png" mode="aspectFit" />
+            <text>快递回收</text>
+          </view>
+          <view class="itemList">
+            <view><text>只保证图片的短边能完</text></view>
+            <view><text>只保证图片的短</text></view>
+            <view><text>只保证示出来</text></view>
+            <view><text>只保证完全显示出来</text></view>
+          </view>
+      </view>
+        
+      <view class="questionItem">
+          <view class="itemType">
+            <image src="../../images/icons/machine.png" mode="aspectFit" />
+            <text>机器回收</text>
+          </view>
+          <view class="itemList">
+            <view><text>只保证图片的短边能完</text></view>
+            <view><text>只保证图片的短</text></view>
+            <view><text>只保证示出来</text></view>
+            <view><text>只保证完全显示出来</text></view>
+          </view>
+      </view>
+      
+      <view class="questionItem">
+          <view class="itemType">
+            <image src="../../images/icons/stroe.png" mode="aspectFit" />
+            <text>门店回收</text>
+          </view>
+          <view class="itemList">
+            <view><text>只保证图片的短边能完</text></view>
+            <view><text>只保证图片的短</text></view>
+            <view><text>只保证示出来</text></view>
+            <view><text>只保证完全显示出来</text></view>
+          </view>
+        </view>
+        
+    </view>
+  </view>
+
+  <!-- 其他问题 -->
+  <view class="container mar100">
+    <view class="titleCon"><text>其他问题</text></view>
+    <view class="otherQuestion">
+      <view><text>只保证完全显示出来</text></view>
+    </view>
   </view>
 
 
 
 
-
-
-
-
+ 
 
 
 

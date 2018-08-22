@@ -5,7 +5,161 @@
 /* 顶部搜索 */
 .topSearch{
     margin:24rpx;
-    padding: 30rpx;
-    background: #000000
+    padding: 70rpx 30rpx 30rpx 30rpx;
+    background: #20d372;
+    border-radius: 8rpx;
 }
+.topSearchTitle{
+    font-size: 48rpx;
+    margin-bottom: 10rpx;
+    color:#fff;
+}
+
+/* 搜索框 */
+.searchBox{
+    background: #fff;
+    border-radius: 6rpx;
+    margin-top:25rpx;
+    height:80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.searchBox view{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    height:60rpx;
+}
+.searchBox view image{
+    height:32rpx;
+    width:40rpx;
+    margin-left:40rpx;
+}
+.searchBox view input{
+    font-size:32rpx;
+    height:60rpx;
+    padding: 0;
+    width: 100%;
+    margin-left:10rpx;
+    margin-right:40rpx;
+}
+
+/* 回收流程 */
+.reyeStep{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between
+}
+.reyeStep .arrow{
+    width:49rpx;
+    height:47rpx;
+    background: url("../../images/icons/step-arrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.reyeStep .stepList{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.reyeStep .stepList image{
+    width:60rpx;
+    height:60rpx;
+    display: block;
+}
+.reyeStep .stepList text{
+    display:block;
+    font-size:26rpx;
+    margin-top:22rpx;
+}
+
+/* container */
+.container{
+    margin-top:24rpx;
+    background: #fff;
+    padding:26rpx;
+}
+
+/* 标题 */
+.titleCon{
+    color:#24b680;
+    font-size:32rpx;
+    margin-bottom: 26rpx;
+}
+
+/* 问题列表 */
+.questionItem{
+    display: flex;
+    flex-direction: row;
+    border-top:2rpx solid #eee;
+    border-bottom: 2rpx solid #eee;
+}
+.reyeQuestion{
+    
+}
+.questionItem .itemType{
+    width:120rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-right: 2rpx solid #eee;
+    min-height: 130rpx;
+
+}
+.questionItem .itemType image{
+    width:72rpx;
+    height:40rpx;
+}
+.questionItem .itemType text{
+    font-size:24rpx;
+    margin-top:15rpx;
+}
+.questionItem .itemList{
+    flex:1;
+}
+
+.questionItem .itemList view{
+    width:49.5%;
+    float: left;
+    height:65rpx;
+    line-height: 65rpx;
+    text-align: center;
+    border-right:2rpx solid #eee;
+    border-bottom:2rpx solid #eee;
+    color:#4d4d4d;
+}
+.questionItem .itemList view:nth-child(2),.questionItem .itemList view:nth-child(4){
+     border-right:0;
+}
+
+.questionItem .itemList view:nth-child(3),.questionItem .itemList view:nth-child(4){
+     border-bottom:0;
+}
+
+.reyeQuestion .questionItem:nth-child(2),.reyeQuestion .questionItem:nth-child(3),.reyeQuestion .questionItem:nth-child(4){
+    border-top: 0;
+}
+
+/* 其他问题 */
+.otherQuestion view{
+    font-size: 26rpx;
+    height:64rpx;
+    line-height: 64rpx;
+    border-bottom: 2rpx solid #eee;
+    background: url("../../images/icons/arrow-right.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 4%;
+}
+
+.mar100{
+    margin-bottom: 100rpx;
+}
+    
 

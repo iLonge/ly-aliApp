@@ -1,0 +1,19 @@
+/* 帮助详情 */
+.container{
+    margin-top:26rpx;
+    background: #fff;
+    padding: 26rpx;
+}
+.title{
+    font-size:26rpx;
+    margin-bottom: 26rpx;
+    background: url("../../images/icons/rightS.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 2%;
+    font-weight: bold;
+}
+.info{
+    font-size: 26rpx;
+    line-height: 40rpx;
+}

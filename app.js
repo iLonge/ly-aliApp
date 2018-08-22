@@ -18,7 +18,6 @@ App({
           if (res.authCode) {
             // 认证成功
             // 调用自己的服务端接口，让服务端进行后端的授权认证，并且种session，需要解决跨域问题
-
             my.httpRequest({ 
               method: 'POST',
               url: this.apiUrl + 'api/alipay/get_user_id_by_auth_code',

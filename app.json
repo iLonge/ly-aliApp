@@ -6,6 +6,7 @@
     "pages/add-todo/add-todo",
     "pages/order-center/order-center",
     "pages/help/help",
+    "pages/help-detail/help-detail",
     "pages/service/service",
     "pages/order-detail/order-detail",
     "pages/phone-brand/phone-brand",
@@ -13,6 +14,7 @@
     "pages/submit-courier/submit-courier",
     "pages/submit-order/submit-order",
     "pages/recycling-car/recycling-car"
+    
   ],
   "window": {
     "defaultTitle": "壹站收",
