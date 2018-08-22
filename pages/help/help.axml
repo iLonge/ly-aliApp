@@ -1,3 +1,20 @@
-<view>
-  help Page
+<view class="helpContainer">
+  <!-- 顶部搜索 -->
+  <view class="topSearch">
+      <view>您好,</view>
+      <view>我们为您提供更多帮助</view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </view>
