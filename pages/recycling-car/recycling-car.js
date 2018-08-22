@@ -4,22 +4,34 @@ Page({
     recylingLists: [
       {
         id: '12345',
-        isEffective: 1,
         modal: '小米MIX2S 全面屏游戏手机',
         price: 2500,
         imgUrl: '../../images/icons/delet.png'
       },
       {
         id: '232345',
-        isEffective: 0,
         modal: '小米5S 暗夜之眼拍照手机',
         price: 500,
         imgUrl: '../../images/icons/delet.png'
       },
     ]
   },
+
   handleChange(event) {
-   console.log(event.currentTarget.dataset)
+    var that = this;
+    var this_checked = event.currentTarget.dataset.id;
+    var recylingLists = this.data.recylingLists;
+
+    for(var i=0;i<recylingLists.length;i++) {
+      if(recylingLists[i].id == this_checked) {
+        recylingLists[i].checked = true;
+      } else {
+        recylingLists[i].checked = false;
+      }
+    }
+    that.setData({
+      recylingLists: recylingLists
+    })
   },
   handleDelet(e) {
     let that = this;

@@ -1,14 +1,16 @@
 <view class="page-recycling-car">
   <!-- 结算列表 -->
   <view class="article arrecycling-car-lists">
-    <block a:for={{recylingLists}} a:key={{index}}>
+    <block a:for="{{recylingLists}}" a:key="{{index}}">
       <view class="list-item">
-        <label class="checkbox">
-          <checkbox value="{{item.id}}" checked="{{isSelected}}" onChange="handleChange" />
+        <radio-group class="radio-group" data-id='{{item.id}}' onChange="handleChange">
+        <label class="radio">
+          <radio value="{{item.id}}" checked="{{item.checked}}" />
         </label>
+        </radio-group>
         <image class="list-item-img" src="../../images/banner1.png" />
         <view>
-          <view class="list-item-valid">
+          <view class="list-item-valid"> 
             <text class="success">{{item.isEffective == 1 ? "评估有效" : "评估无效"}}</text>
             <image class="delet-icon" src="{{item.imgUrl}}" onTap="handleDelet" data-id="{{item.id}}" />
           </view>
