@@ -1,0 +1,27 @@
+.page-submit-order {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  
+}
+
+.item-header {
+    margin-top: 20rpx;
+}
+
+.picker-text {
+   padding: 10rpx;
+   margin-left: 10rpx;
+}
+
+.arrow-right {
+   top: 10rpx;
+}
+
+.service {
+    padding: 20rpx;
+}
+
+.article { 
+  flex: 1; 
+} 
+

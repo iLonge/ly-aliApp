@@ -1,0 +1,64 @@
+<view class="page-order-center">
+  <tabs
+    tabs="{{tabs}}"
+    showPlus="{{false}}"
+    onTabClick="handleTabClick"
+    onChange="handleTabChange"
+    onPlusClick="handlePlusClick"
+    tabBarUnderlineColor="{{tabBarUnderlineColor}}"
+    tabBarActiveTextColor="{{tabBarActiveTextColor}}"
+    activeTab="{{activeTab}}">
+    <block a:for="{{tabs}}">
+      <tab-content key="{{index}}">
+        <!-- <view class="tab-content">content of {{item.title}}</view> -->
+        <block>
+          <view class="tab-content-wrap">
+            <view class="item-header">
+              <text class="grey">订单号：{{1234567890123}}</text>
+              <text class="grey">首次检测</text>
+            </view>
+            <view class="item-content">
+              <view>
+                <image src="../../images/adv1.png" />
+              </view>
+              <view class="product-info">
+                <text>小米MIX2S全面屏游戏手机8GB256GBh黑色全网通4G陶瓷手机</text>
+                <text class="orange price">\n初检价格：{{ 1200.00 }}</text>
+              </view>
+              <view class="orange test-time">
+                2018-06-05 15:30
+              </view>
+            </view>
+            <view class="product-action">
+              <button type="warn" plain size="mini" style="margin-right:20rpx;">发货</button>
+              <button type="default" size="mini">取消</button>
+            </view>
+          </view>
+          <view class="tab-content-wrap">
+            <view class="item-header">
+              <text class="grey">订单号：{{1234567890123}}</text>
+              <text class="grey">已邮寄</text>
+            </view>
+            <view class="item-content">
+              <view>
+                <image src="../../images/adv1.png" />
+              </view>
+              <view class="product-info">
+                <text>小米MIX2S全面屏游戏手机8GB256GBh黑色全网通4G陶瓷手机</text>
+                <text class="orange price">\n初检价格：{{ 1200.00 }}</text>
+              </view>
+              <view class="orange test-time">
+                2018-06-05 15:30
+              </view>
+            </view>
+            <view class="product-action">
+              <navigator url='../order-detail/order-detail'>
+                <button type="default" size="mini">查看详情</button>
+              </navigator> 
+            </view>
+          </view>
+        </block>
+      </tab-content>
+    </block>
+  </tabs>
+</view>

@@ -1,0 +1,55 @@
+.am-tabs-bar{
+  margin: 20rpx 0;
+}
+
+.tab-content-wrap {
+  padding-bottom: 20rpx;
+  background-color: #F5F5F9; 
+}
+
+.tab-content {
+  display: flex;
+  align-items: center;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  font-size: 24rpx;
+  background-color: #FFF;
+}
+
+.item-content {
+  display: flex;
+  justify-content: space-around;
+  font-size: 28rpx;
+  padding: 20rpx;
+}
+
+.item-content image {
+  width: 120rpx;
+  height: 150rpx;
+}
+.product-info {
+  width: 50%;
+  align-items: center;
+  margin: 10rpx; 
+}
+
+.price {
+  line-height: 1.4;
+}
+
+.test-time {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+.product-action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10rpx 20rpx;
+  background: #FFF;
+}

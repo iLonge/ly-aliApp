@@ -1,0 +1,36 @@
+<view class="page-phone-brand">
+  <!-- 机型搜索 -->
+  <view class="search-container">
+    <image class="search-icon" src="../../images/icons/search.png" />
+    <input class="search-box" type="text" placeholder="点击搜索查询其它机型" />
+  </view>
+  <view>
+    
+    <vtabs
+      tabs="{{tabs}}"
+      tabBarlineColor="{{tabBarlineColor}}"
+      tabBarActiveTextColor="{{tabBarActiveTextColor}}">
+      <view class="user-phone-model">
+        <view>
+          <image src="../../images/banner1.png" />
+        </view>
+        <view>
+          <text>检测到您的手机为</text>
+          <view>
+            {{userPhone}}
+          </view>
+        </view>
+        <view>
+          <button type="default" size="mini" onTap="defaultTap">查询本机价格</button>
+        </view>
+      </view> 
+      <block a:for="{{tabs}}">
+        <vtab-content id="{{item.id}}">
+          <view style="1px solid #eee; height: 800px; box-sizing: border-box">
+            <text>content of {{item.name}}</text>
+          </view>
+        </vtab-content>
+      </block>
+    </vtabs>
+  </view>
+</view>

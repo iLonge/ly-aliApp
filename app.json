@@ -1,0 +1,54 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/todos/todos",    
+    "pages/add-todo/add-todo",
+    "pages/order-center/order-center",
+    "pages/help/help",
+    "pages/service/service",
+    "pages/order-detail/order-detail",
+    "pages/phone-brand/phone-brand",
+    "pages/assess-result/assess-result",
+    "pages/submit-courier/submit-courier",
+    "pages/submit-order/submit-order",
+    "pages/recycling-car/recycling-car"
+  ],
+  "window": {
+    "defaultTitle": "壹站收",
+    "pullRefresh": true, 
+    "allowsBounceVertical": "NO",
+    "titleBarColor": "#ffffff"
+  },
+  "tabBar": {
+    "textColor": "#dddddd",
+    "selectedColor": "#18AF78",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "name": "个人中心",
+        "icon": "../../images/icons/index.png",
+        "activeIcon": "../../images/icons/index.png"
+      },
+      {
+        "pagePath": "pages/order-center/order-center",
+        "name": "订单中心",
+        "icon": "../../images/icons/order2.png",
+        "activeIcon": "../../images/icons/order1.png"
+      },
+      {
+        "pagePath": "pages/help/help",
+        "name": "帮助中心",
+        "icon": "../../images/icons/help.png",
+        "activeIcon": "../../images/icons/help1.png"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "name": "在线客服",
+        "icon": "../../images/icons/service.png",
+        "activeIcon": "../../images/icons/service.png"
+      }
+    ]
+  }
+}

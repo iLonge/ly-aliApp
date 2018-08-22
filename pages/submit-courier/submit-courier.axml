@@ -1,0 +1,62 @@
+<view class="page-submit-courier">
+  <!-- 物流 -->
+  <view class="article">
+  <view class="courier"> 
+    <view class="courier-select">
+      <view class="section-title">快递公司： </view>
+      <picker onChange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker-text">
+          <text style="color:{{index>0 ? '#333' : ''}};">
+            {{array[index]}}
+          </text>
+          <image class="arrow-right" src="../../images/icons/arrow-right.png" />
+        </view>    
+      </picker>
+    </view>
+    <view>
+      <label for="courierCode">
+        快递单号：
+      </label>  
+      <input id="courierCode" type="text" placeholder="请输入快递单号" />
+    </view>
+  </view>
+  <!-- 收件人地址 -->
+  <view class="recipient-info">
+    <view class="item-header">
+      请邮寄到下一地址
+    </view>
+    <view class="recipient-info-content">
+      <view>
+        收件人：{{ '壹站收' }}
+      </view>
+      <view>
+        联系电话{{ '134-0911-6888' }}
+      </view>
+      <view>
+        邮递地址：{{ '陕西省西安市雁塔区沣惠南路唐丰国际B座10F' }}
+      </view>
+    </view>
+  </view>
+  <!-- 注意事项 -->
+  <view class="matters-attention">
+    <view class="item-header">
+      注意事项
+    </view>
+    <view class="recipient-info-content">
+      <view>
+        1.看看方大化工当天 恩爱法法师安静发s打发士大夫发送
+      </view>
+      <view>
+        2.按时大大是飞洒的股份高富帅个傻瓜杀他个萨嘎噶十多个阿gas按时啊 发a
+      </view>
+      <view>
+        3.陕西省西安市雁塔区沣惠南路唐丰国际B座10F
+      </view>
+    </view>
+  </view>
+  </view>
+  <!-- 提交 -->
+  <view class="footer">
+    <button form-type="submit" type="primary" size="defaultSize" onTap="defaultTap" style="outline:none;background-color: #18AF78;"> 提交 </button>
+  </view>
+</view>

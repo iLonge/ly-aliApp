@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "订单中心",
+  "usingComponents":{
+    "tabs":"../../components/tabs/index",
+    "tab-content": "../../components/tabs/tab-content/index"
+  }
+}

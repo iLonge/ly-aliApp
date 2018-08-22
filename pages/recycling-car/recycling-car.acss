@@ -1,0 +1,49 @@
+
+.page-recycling-car {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.list-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 28rpx;
+    padding: 20rpx;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.a-radio  {
+    width: 0.3rem;
+    height: 0.3rem;
+}
+
+.a-icon-success {
+    fill: #18AF78;
+    width: 0.3rem!important;
+    height: 0.3rem!important;
+}
+
+.list-item-img{
+    width: 80rpx;
+    height: 100rpx;
+    margin: 0 30rpx;
+}
+
+.list-item .delet-icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.assessment {
+    font-size: 24rpx;
+    line-height: 1.5;
+}
+
+.list-item-valid {
+    width: 520rpx;;
+    display: flex;
+    justify-content: space-between;
+}

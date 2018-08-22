@@ -1,0 +1,39 @@
+<view class="page-recycling-car">
+  <!-- 结算列表 -->
+  <view class="article arrecycling-car-lists">
+    <block a:for={{recylingLists}} a:key={{index}}>
+      <view class="list-item">
+        <label class="checkbox">
+          <checkbox value="{{item.id}}" checked="{{isSelected}}" onChange="handleChange" />
+        </label>
+        <image class="list-item-img" src="../../images/banner1.png" />
+        <view>
+          <view class="list-item-valid">
+            <text class="success">{{item.isEffective == 1 ? "评估有效" : "评估无效"}}</text>
+            <image class="delet-icon" src="{{item.imgUrl}}" onTap="handleDelet" data-id="{{item.id}}" />
+          </view>
+          <view class="assessment">
+            <text>
+              评估机型: {{item.modal}} 
+            </text>
+            <text class="success">\n
+              评估价格: ￥{{item.price}}
+            </text>
+          </view>
+        </view>
+      </view>
+    </block> 
+    
+  </view>
+  <!-- 结算 -->
+  <view class="footer">
+    <button 
+      form-type="submit" 
+      type="primary" 
+      size="defaultSize" 
+      onTap="defaultTap" 
+      style="border:none;background-color:#FFA264;">
+      结算
+    </button>
+  </view>
+</view>

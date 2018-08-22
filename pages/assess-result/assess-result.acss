@@ -1,0 +1,150 @@
+.notice {
+    padding: 20rpx;
+    text-align: center;
+    background-color: #fff;
+}
+
+.valuate-price {
+    font-size: 24rpx;
+    color: #fff;
+    width: 100%;
+    height: 320rpx;
+    background-color: #fff;
+    background: url(../../images/recycle.png) no-repeat center;
+}
+
+.estimate-that {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20rpx;
+}
+
+.estimate-that image {
+    width: 28rpx;
+    height: 28rpx;
+    margin: 10rpx 20rpx;
+}
+
+.price {
+    text-align: center;
+}
+
+.text-xxl {
+    font-size: 64rpx;
+    font-weight: 500;
+}
+
+.rmb {
+    font-size: 28rpx;
+}
+
+.tips {
+    text-align: center;
+    margin-top: 70rpx;
+}
+
+.return {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20rpx;
+    background-color: #fff;
+}
+
+.return image {
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 10rpx;
+}
+
+.privacy {
+    margin-top: 20rpx;
+    padding: 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.privacy-tip {
+    width: 600rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.return-header image,
+.privacy image{
+    width: 28rpx;
+    height: 28rpx;
+    vertical-align: middle;
+}
+
+image.privacy-icon {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.return-header {
+    margin-top: 20rpx;
+    padding: 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.btn-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-container button {
+  width: 250px;
+}
+
+.box.top, .box.bottom {
+    padding: 20rpx;
+    height: auto;
+}
+
+.box.left, .box.right {
+  width: 200px;
+  height: 100%;
+}
+
+.box {
+    position: relative;
+    padding: 20rpx;
+    background-color: #fff;
+}
+
+.popup-title {
+    font-size: 36rpx;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.popup-content {
+    font-size: 24rpx;
+    padding: 20rpx;
+    line-height: 1.5;
+    overflow-y: scroll;
+}
+
+.popup-content view {
+    margin-bottom: 20rpx;
+}
+
+.clear-icon {
+    position: absolute;
+    right: 20rpx;;
+    top: 3%;
+    z-index: 999;
+}
+

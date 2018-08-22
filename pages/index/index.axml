@@ -1,0 +1,89 @@
+<import src="../../components/list/index.axml" />
+
+<view class="page-index">
+  <!-- swiper -->
+  <view class='swiper'>
+    <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" duration="{{duration}}" interval='{{interval}}' bindchange="bindchange"  circular="{{circular}}" style="height:{{imgheights[current]}}rpx;">
+    <block a:for='{{imgList}}' a:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad"/>
+      </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- search container -->
+  <view class="search">
+    <image class="search-icon" src="../../images/icons/search.png" />
+    <input class="search-box" type="text" placeholder="请输入您想查询的型号" />
+    <view class="keywords">
+      热搜:  
+      <text class="model" a:for="{{ hotRecycle }}" a:key="{{ index }}"> {{item.name}} </text>
+    </view> 
+  </view>
+  <!-- 广告图 -->
+  <view class="advertising">
+    <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" duration="{{duration}}" interval='{{interval}}' bindchange="bindchange"  circular="{{circular}}" style="height:{{imgheights[current]}}rpx;">
+      <block a:for='{{advList}}' a:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- recycling process -->
+  <view>
+    <view>
+      <template is="List" data={{...listData}}> 
+    </view>
+    <view class="process-step">
+      <image src="../../images/icons/step1.png" /> 
+      <image src="../../images/icons/step-arrow.png" /> 
+      <image src="../../images/icons/step2.png" /> 
+      <image src="../../images/icons/step-arrow.png" /> 
+      <image src="../../images/icons/step3.png" /> 
+      <image src="../../images/icons/step-arrow.png" /> 
+      <image src="../../images/icons/step4.png" /> 
+    </view>
+    <view class="step-text">
+      <text>询价提交</text>
+      <text>信用预付</text>
+      <text>旧机质检</text>
+      <text>补齐尾款</text>
+    </view>
+  </view>
+  <!-- 热门品牌 -->
+  <view class="hot-brand">
+    <view class="item-header"> 
+      热门品牌回收
+    </view>
+    <view class="brand-list">
+      <block a:for="{{hotBrands}}" a:key="{{index}}">
+        <navigator class="brand-list-item" url="../phone-brand/phone-brand?id={{item.id}}" hover-class="navigator-hover">
+          <view>
+            <image src="http://img.epbox.cn/images/{{item.logo}}" /> 
+            <text>{{item.name}}</text>
+          </view>
+        </navigator>
+      </block> 
+    </view>
+  </view>
+  <!-- 热门手机 | 热门平板回收 -->
+  <view class="hot-telphone">
+    <view class="item-header"> 
+      热门手机<text style="color: #999;"><text class="cut-line"><!-- |</text>热门平板回收</text> -->
+    </view>
+    <view class="product-list">
+      <block a:for="{{hotPhones}}" a:key="{{index}}">
+        <navigator url="../phone-brand/phone-brand?id={{item.id}}" hover-class="navigator-hover">
+        <view class="product-list-item">
+          <image src="http://img.epbox.cn/images/{{item.image}}" /> 
+          <view class="product-info"> 
+            <text class="grey">{{item.brandName}} \n</text>
+            <text class="price">最高回收机: ￥{{item.upPrice}}</text>
+          </view>
+        </view>
+        </navigator>
+      </block> 
+    </view>
+  </view>
+</view>

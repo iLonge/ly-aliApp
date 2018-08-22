@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "手机品牌",
+  "usingComponents":{
+    "vtabs":"../../components/vtabs/index",
+    "vtab-content": "../../components/vtabs/vtab-content/index"
+  }
+}

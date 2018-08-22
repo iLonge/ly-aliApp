@@ -1,0 +1,48 @@
+@import '../../app.acss';
+
+.search-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20rpx;
+    background-color: #fff;
+}
+
+.search-icon {
+    position: absolute;
+    z-index: 99;
+    margin-left: -25%;
+}
+
+.search-box {
+    font-size: 28rpx;
+    color: #fff;
+    width: 70%;
+    height: 80rpx;
+    text-align: center;
+    padding-left: 20%;
+    border-radius: 12rpx;
+    background-color: #18AF78;
+}
+
+.user-phone-model {
+    font-size: 24rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20rpx;
+    padding: 20rpx;
+    border-radius: 8rpx;
+    box-shadow:0 0 10px #d8d8d8;
+}
+
+.user-phone-model image {
+    width: 70rpx;
+    height: 100rpx;
+}
+
+.user-phone-model button {
+    font-size: 20rpx;
+    background-color: #EFEFEF; 
+}
