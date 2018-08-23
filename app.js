@@ -19,16 +19,12 @@ App({
             // 认证成功
             // 调用自己的服务端接口，让服务端进行后端的授权认证，并且种session，需要解决跨域问题
             my.httpRequest({ 
-              // headers: {
-              //   'authorization': token,
-              //   'Content-Type': "application/json"
-              // },
-              method: 'POST', 
-              // http://thirdtest.epbox.cn/
-              url: this.apiUrl + 'channel_charge/api/pay_order/get_user_id_by_auth_code',
+              method: 'POST',
+              url: this.apiUrl1 + 'channel_charge/api/pay_order/get_user_id_by_auth_code',
               data: JSON.stringify({
                 auth_code: res.authCode
-              }), 
+              }),
+              dataType: 'json',
               success: (res) => {
                 console.log(res.data.message) 
                 // 授权成功并且服务器端登录成功 
