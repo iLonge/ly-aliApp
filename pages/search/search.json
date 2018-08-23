@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "搜索框",
+  "usingComponents":{
+    "search-bar":"../../components/search-bar/index",
+    "list":"../../components/my-list/index",
+    "list-item":"../../components/my-list/list-item/index"
+  }
+}

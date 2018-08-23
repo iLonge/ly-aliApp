@@ -9,16 +9,18 @@
         <image src="{{item}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad"/>
       </swiper-item>
       </block>
-    </swiper>
+    </swiper> 
   </view>
   <!-- search container -->
   <view class="search">
-    <image class="search-icon" src="../../images/icons/search.png" />
-    <input class="search-box" type="text" placeholder="请输入您想查询的型号" />
-    <view class="keywords">
-      热搜:  
-      <text class="model" a:for="{{ hotRecycle }}" a:key="{{ index }}"> {{item.name}} </text>
-    </view> 
+    <navigator url='../search/search'>
+      <image class="search-icon" src="../../images/icons/search.png" />
+      <input class="search-box" type="text" placeholder="请输入您想查询的型号" disabled />
+      <view class="keywords">
+        热搜:  
+        <text class="model" a:for="{{ hotRecycle }}" a:key="{{ index }}"> {{item.name}} </text>
+      </view> 
+    </navigator>
   </view>
   <!-- 广告图 -->
   <view class="advertising">

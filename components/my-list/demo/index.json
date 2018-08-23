@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "List",
+  "usingComponents":{
+    "list":"../index",
+    "list-item":"../list-item/index"
+  }
+}

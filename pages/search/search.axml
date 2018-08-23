@@ -1,0 +1,35 @@
+<view>
+  <search-bar
+    value="{{value}}"
+    focus="{{true}}"
+    disabled="{{false}}"
+    maxLength="{{20}}"
+    placeholder="输入您要出售的手机型号"
+    onInput="handleInput"
+    onClear="handleClear"
+    onFocus="handleFocus"
+    onBlur="handleBlur"
+    onCancel="handleCancel"
+    onSubmit="handleSubmit"
+    showCancelButton="{{false}}" />
+    <!-- 搜索 -->
+    <view class="search-list">
+      <list>
+        <block a:for="{{items}}">
+          <list-item
+            onClick="onItemClick"
+            index="items-multiple-{{index}}"
+            last="{{index === (itemsThumbMultiple.length - 1)}}"
+            key="items-multiple-{{index}}"
+            multipleLine="{{false}}"
+          >
+            {{item.title}}
+            <view class="am-list-brief">{{item.brief}}</view>
+            <view a:if="{{item.extra}}" slot="extra">
+              {{item.extra}}
+            </view>
+          </list-item>
+        </block>
+		  </list>
+    </view>
+</view>
