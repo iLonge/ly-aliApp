@@ -11,18 +11,19 @@
 
 .a-collapse-title {
   position: relative;
-  height: 88rpx;
-  line-height: 88rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   padding: 0 60rpx 0 30rpx;
-  font-size: 34rpx;
+  font-size: 28rpx;
+  font-weight: 500;
 }
 
 .a-collapse-title-arrow {
   position: absolute;
-  top: 30rpx;
-  right: 30rpx;
-  width: 30rpx;
-  height: 30rpx;
+  top: 26rpx;
+  right: 20rpx;
+  width: 20rpx;
+  height: 20rpx;
   background-image: url("data:image/svg+xml;charset=utf-8,<svg width='16' height='26' viewBox='0 0 16 26' xmlns='http://www.w3.org/2000/svg'><path d='M2 0L0 2l11.5 11L0 24l2 2 14-13z' fill='%23C7C7CC' fill-rule='evenodd'/></svg>");
   background-size: contain;
   background-repeat: no-repeat;
@@ -35,5 +36,6 @@
 
 .a-collapse-content {
   padding: 20rpx;
-  font-size: 30rpx;
+  font-size: 24rpx;
+  color: #666;
 }

@@ -1,8 +1,7 @@
 {
   "pages": [
-    "pages/recycling-car/recycling-car",
     "pages/index/index",
-    "pages/todos/todos",    
+    "pages/todos/todos",
     "pages/add-todo/add-todo",
     "pages/order-center/order-center",
     "pages/help/help",
@@ -12,9 +11,9 @@
     "pages/phone-brand/phone-brand",
     "pages/assess-result/assess-result",
     "pages/submit-courier/submit-courier",
-    "pages/submit-order/submit-order"
-    
-    
+    "pages/recycling-car/recycling-car",
+    "pages/submit-order/submit-order",
+    "pages/common-recycling-problems/common-recycling-problems"
   ],
   "window": {
     "defaultTitle": "壹站收",

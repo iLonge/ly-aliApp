@@ -1,6 +1,7 @@
 page {
   /* flex: 1;
   display: flex; */
+  font-size: 24rpx;
   background: #f7f7f7;
 }
 
