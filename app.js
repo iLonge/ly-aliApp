@@ -23,11 +23,12 @@ App({
               //   'authorization': token,
               //   'Content-Type': "application/json"
               // },
-              method: 'POST',
-              url: this.apiUrl + 'api/alipay/get_user_id_by_auth_code',
+              method: 'POST', 
+              // http://thirdtest.epbox.cn/
+              url: this.apiUrl + 'channel_charge/api/pay_order/get_user_id_by_auth_code',
               data: JSON.stringify({
                 auth_code: res.authCode
-              }),
+              }), 
               success: (res) => {
                 console.log(res.data.message) 
                 // 授权成功并且服务器端登录成功 
