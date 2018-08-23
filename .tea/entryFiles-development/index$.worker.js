@@ -12,13 +12,15 @@ require('../../pages/todos/todos');
 require('../../pages/add-todo/add-todo');
 require('../../pages/order-center/order-center');
 require('../../pages/help/help');
+require('../../pages/search/search');
 require('../../pages/help-detail/help-detail');
 require('../../pages/service/service');
 require('../../pages/order-detail/order-detail');
 require('../../pages/phone-brand/phone-brand');
 require('../../pages/assess-result/assess-result');
 require('../../pages/submit-courier/submit-courier');
-require('../../pages/submit-order/submit-order');
 require('../../pages/recycling-car/recycling-car');
+require('../../pages/submit-order/submit-order');
+require('../../pages/common-recycling-problems/common-recycling-problems');
 }
 self.bootstrapApp ? self.bootstrapApp({ success }) : success();

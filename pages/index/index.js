@@ -21,6 +21,14 @@ Page({
       ],
     },
   },
+
+  // 跳转搜索
+  search(){
+    my.navigateTo({
+      url:'/pages/search/search'
+    })
+  },
+
   imageLoad: function (e) {//获取图片真实宽度  
     var imgwidth = e.detail.width,
         imgheight = e.detail.height,
@@ -56,7 +64,7 @@ Page({
 
   phoneFun(res, selfObj) {
      if(res.status == "SUCCESS") {
-      let hotPhones = res.result.rows;
+      let hotPhones = res.result.rows.slice(0,4);
       selfObj.setData({
           hotPhones : hotPhones
       });

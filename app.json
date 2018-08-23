@@ -5,6 +5,7 @@
     "pages/add-todo/add-todo",
     "pages/order-center/order-center",
     "pages/help/help",
+    "pages/search/search",
     "pages/help-detail/help-detail",
     "pages/service/service",
     "pages/order-detail/order-detail",

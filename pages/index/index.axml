@@ -12,9 +12,9 @@
     </swiper>
   </view>
   <!-- search container -->
-  <view class="search">
+  <view class="search" >
     <image class="search-icon" src="../../images/icons/search.png" />
-    <input class="search-box" type="text" placeholder="请输入您想查询的型号" />
+    <view onTap="search"><input class="search-box" type="text" placeholder="请输入您想查询的型号" disabled="true"/></view>
     <view class="keywords">
       热搜:  
       <text class="model" a:for="{{ hotRecycle }}" a:key="{{ index }}"> {{item.name}} </text>

@@ -1,0 +1,9 @@
+<!-- 顶部搜索 -->
+<view class="topSearch">
+    <!-- 搜索输入 -->
+    <view class="searchBox">
+      <view>
+        <input type="text" placeholder="请输入关键字词"/>
+      </view>
+    </view>
+</view> 

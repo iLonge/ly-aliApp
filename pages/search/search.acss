@@ -1,0 +1,34 @@
+/* 搜索框 */
+.searchBox{
+    background: #fff;
+    border-radius: 6rpx;
+    height:80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 26rpx;
+    border-bottom:2rpx solid #dedede;
+}
+.searchBox view{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    height:60rpx;
+}
+.searchBox view image{
+    height:32rpx;
+    width:40rpx;
+    margin-left:40rpx;
+}
+.searchBox view input{
+    font-size:32rpx;
+    height:60rpx;
+    padding: 0;
+    width: 97%;
+    margin-left:10rpx;
+    background: #eee;
+    padding-left:3%;
+    border-radius: 6rpx;
+    font-size:24rpx;
+}
