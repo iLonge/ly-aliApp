@@ -1,3 +1,6 @@
-<view>
-  service Page
+<view class="container">
+  <view class="serviceTitle"><text class="people"></text>在线客服</view>
+  <view class="serviceContent">在线服务时间为早9:00-22:00，将竭诚接收您的反馈。</view>
+  <view class="serviceTitle"><text class="phone"></text>4008252250</view>
+  <view class="serviceContent">热线服务时间为全天24小时，如有疑问请致电。</view>
 </view>

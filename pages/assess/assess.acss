@@ -1,0 +1,98 @@
+/* 评估选项 */
+.evaluation{
+    margin-top:101rpx;
+}
+.evaluationItem{
+   margin:30rpx 40rpx 0 40rpx;
+}
+
+.evaluationItem radio-group,.evaluationItem checkbox-group{
+    background: #fff;
+    padding: 40rpx;
+    border-radius: 6rpx;
+}
+.evaluationItem radio-group view,.evaluationItem checkbox-group view{
+    padding:20rpx 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size:32rpx;
+    border-bottom: 2rpx solid #eee;
+    display: flex;
+    flex-direction: row;
+}
+
+.a-icon-success,.a-icon-success_no_circle{
+    fill:#18b078
+}
+.evaluationItem radio-group view:first-child,.evaluationItem checkbox-group view:first-child{
+    padding-top: 0;
+}
+
+.evaluationItem radio-group view:last-child,.evaluationItem checkbox-group view:last-child{
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.evaluationItem radio-group view label,.evaluationItem checkbox-group view label{
+    margin-left:22rpx;
+    margin-top:6rpx;
+    flex: 1;
+}
+
+.evaluationItem .evaluationTitle{
+    font-size: 32rpx;
+    margin-bottom: 25rpx;
+}
+
+.options{
+    padding-bottom: 200rpx;
+}
+
+/* 进度条 */
+.topStep{
+    height:60rpx;
+    position: fixed;
+    top:0;
+    width:100%;
+    border-bottom:2rpx solid #eee;
+    z-index: 99999;
+    background: #fff;
+}
+
+.topStep view:nth-child(2){
+    height:60rpx;
+    background:#18b078;
+    font-size: 24rpx;
+}
+
+.topStep view:nth-child(1){
+    position: absolute;
+    width:100%;
+    top:0;
+    height:60rpx;
+    line-height: 60rpx;
+}
+
+.topStep view:nth-child(1) text:nth-child(1){
+    float:left;
+    margin-left:20rpx;
+}
+
+.topStep view:nth-child(1) text:nth-child(2){
+    float:right;
+    margin-right:20rpx;
+}
+
+
+/* 查看定价 */
+.getPrice{
+    height:100rpx;
+    width:100%;
+    position: fixed;
+    line-height: 100rpx;
+    text-align: center;
+    color:#fff;
+    font-size: 36rpx;
+    bottom: 0;
+    background: #18b078;
+}

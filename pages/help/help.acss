@@ -38,12 +38,12 @@
     margin-left:40rpx;
 }
 .searchBox view input{
-    font-size:32rpx;
     height:60rpx;
     padding: 0;
     width: 100%;
     margin-left:10rpx;
     margin-right:40rpx;
+    font-size:28rpx;
 }
 
 /* 回收流程 */
@@ -117,7 +117,7 @@
     height:40rpx;
 }
 .questionItem .itemType text{
-    font-size:24rpx;
+    font-size:26rpx;
     margin-top:15rpx;
 }
 .questionItem .itemList{
@@ -133,6 +133,7 @@
     border-right:2rpx solid #eee;
     border-bottom:2rpx solid #eee;
     color:#4d4d4d;
+    font-size: 26rpx;
 }
 .questionItem .itemList view:nth-child(2),.questionItem .itemList view:nth-child(4){
      border-right:0;
@@ -157,9 +158,10 @@
     background-repeat: no-repeat;
     background-size: 4%;
 }
+.otherQuestion view:last-child{
+    border-bottom:none;
+}
 
 .mar100{
     margin-bottom: 100rpx;
 }
-    
-

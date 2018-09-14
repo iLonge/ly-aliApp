@@ -1,3 +1,85 @@
-<view>
-  New Page
+<!-- 顶部指示条 -->
+<view class="topStep">
+  <view>
+    <text style="{{color:topSche==100?'#fff':'#333'}}">选择结果与实际情况相符 将以最快速度收款</text>
+    <text a:if="{{topStepstate}}" style="{{color:topSche==100?'#fff':'#333'}}">{{topStepValue}}</text>
+  </view>
+  <view style="{{width:topSche+'%'}}"></view>
+</view>
+
+<!-- 评估选项 -->
+<view class="evaluation">
+
+  <!-- 开机状态 -->
+  <view class="evaluationItem">
+    <view class="evaluationTitle">开机状况</view>
+    <radio-group onChange="selectPhoneState">
+      <view>
+        <radio id="open" value="1"/>
+        <label for="open">开机</label>
+      </view>
+      <view>
+        <radio id="close" value="0" />
+        <label for="close">关机</label>
+      </view>
+    </radio-group>
+  </view>
+
+  <view a:if="{{phoneState}}" class="options">
+    <!-- 型号 -->
+    <view class="evaluationItem" a:if="{{modelOption.length>0}}">
+      <view class="evaluationTitle">型号</view>
+      <radio-group onChange="selectModel">
+        <view a:for="{{modelOption}}" key="{{item}}">
+          <radio id="{{item.baseModel}}" value="{{item.baseModel}},{{item.baseModelId}}"/>
+          <label for="{{item.baseModel}}">{{item.baseModel}}</label>
+        </view>
+      </radio-group>
+    </view>
+    
+    <!-- 基本信息 -->
+    <view class="evaluationItem"  a:for="{{baseOption}}" key="{{item}}" style="{{display:item.style}}" a:if="{{baseOption.length>0}}">
+      <view class="evaluationTitle">{{item.title}}</view>
+      <radio-group onChange="selectBaseOption" data-index="{{index}}">
+        <view  a:for="{{item['row']}}">
+          <radio id="{{item.key}}" value="{{item.key}}" checked="{{item.check}}"/>
+          <label for="{{item.key}}">{{item.value}}</label>
+        </view>
+      </radio-group>
+    </view>
+
+    <!-- 外观等 -->
+    <view class="evaluationItem" a:if="{{funLookState}}" a:for="{{funLookOption.outward.typeData}}">
+      <view class="evaluationTitle">{{item.title}}</view>
+      <radio-group data-id="{{item.id}}" onChange="lookQuestion" data-index="{{index}}">
+        <view a:for="{{item.options}}">
+          <radio id="{{item.subId}}" value="{{item.subId}}" checked="{{item.check}}"/>
+          <label for="{{item.subId}}">{{item.subTitle}}</label>
+        </view>
+      </radio-group>
+    </view>
+
+    <!-- 功能等 -->
+    <view class="evaluationItem" a:if="{{funLookState}}" >
+      <view class="evaluationTitle">{{funLookOption.functions.title}}</view>
+      <checkbox-group onChange="funQuestion">
+        <view a:for="{{funLookOption.functions.typeData}}">
+          <checkbox id="{{item.options[0].subId}}" value="{{item.id}},{{item.options[0].subId}}" checked="{{item.options[0].check}}"/>
+          <label for="{{item.options[0].subId}}">{{item.title}}{{item.options[0].subTitle}}</label>
+        </view>
+      </checkbox-group>
+    </view>
+  </view>
+
+</view>
+
+<!-- 查看定价 -->
+<view 
+  class="getPrice" 
+  onTap="checkPrice"
+  style="{{
+    background:topSche==100?'#18b078':'#ddd'
+  }}"
+>
+  查看定价
 </view>

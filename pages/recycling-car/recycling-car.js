@@ -57,7 +57,6 @@ Page({
           that.setData({
             recylingLists: newallData
           })
-          console.log()
           my.showToast({
             type: 'success',
             content: '删除成功',

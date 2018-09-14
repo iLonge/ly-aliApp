@@ -1,3 +1,3 @@
-<view id="am-vtab-slide-{{anchor}}">
+<view id="am-vtab-slide-{{id}}">
   <slot></slot>
 </view>

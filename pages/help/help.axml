@@ -1,4 +1,4 @@
-<view class="helpContainer">
+<view class="helpContainer" a:if="{{state}}">
   <!-- 顶部搜索 -->
   <view class="topSearch">
       <view class="topSearchTitle">您好,</view>
@@ -7,7 +7,7 @@
       <view class="searchBox">
         <view>
           <image src="../../images/icons/search.png"/>
-          <input type="text" placeholder="请输入关键字词"/>
+          <input type="text" placeholder="请输入关键字词" onConfirm="getSearch"/>
         </view>
       </view>
   </view>  
@@ -49,10 +49,7 @@
             <text>信用回收</text>
           </view>
           <view class="itemList">
-            <view onTap="viewDetail"><text>只保证图片的短边能完</text></view>
-            <view><text>只保证图片的短</text></view>
-            <view><text>只保证示出来</text></view>
-            <view><text>只保证完全显示出来</text></view>
+            <view onTap="viewDetail" a:for="{{creditCard}}" data-id="{{item.id}}"><text>{{item.question.substring(0,8)}}</text></view>
           </view>
       </view>
       
@@ -62,10 +59,7 @@
             <text>快递回收</text>
           </view>
           <view class="itemList">
-            <view><text>只保证图片的短边能完</text></view>
-            <view><text>只保证图片的短</text></view>
-            <view><text>只保证示出来</text></view>
-            <view><text>只保证完全显示出来</text></view>
+            <view onTap="viewDetail" a:for="{{express}}" data-id="{{item.id}}"><text>{{item.question.substring(0,8)}}</text></view>
           </view>
       </view>
         
@@ -75,14 +69,11 @@
             <text>机器回收</text>
           </view>
           <view class="itemList">
-            <view><text>只保证图片的短边能完</text></view>
-            <view><text>只保证图片的短</text></view>
-            <view><text>只保证示出来</text></view>
-            <view><text>只保证完全显示出来</text></view>
+            <view onTap="viewDetail" a:for="{{machine}}" data-id="{{item.id}}"><text>{{item.question.substring(0,8)}}</text></view>
           </view>
       </view>
-      
-      <view class="questionItem">
+      <!-- 暂无门店回收 -->
+      <!-- <view class="questionItem">
           <view class="itemType">
             <image src="../../images/icons/stroe.png" mode="aspectFit" />
             <text>门店回收</text>
@@ -93,8 +84,7 @@
             <view><text>只保证示出来</text></view>
             <view><text>只保证完全显示出来</text></view>
           </view>
-        </view>
-        
+        </view> -->
     </view>
   </view>
 
@@ -102,17 +92,7 @@
   <view class="container mar100">
     <view class="titleCon"><text>其他问题</text></view>
     <view class="otherQuestion">
-      <view><text>只保证完全显示出来</text></view>
+      <view onTap="viewDetail" a:for="{{other}}" data-id="{{item.id}}"><text>{{item.question.substring(0,8)}}</text></view>
     </view>
   </view>
-
-
-
-
- 
-
-
-
-
-
 </view>

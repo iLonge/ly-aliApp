@@ -1,0 +1,41 @@
+<view>
+  <form onSubmit="handleSubmit" class="page-submit-order">
+  <view  class="page-submit-order">
+    <view class="article">
+      <view class="tips">
+        尊敬的用户,请填写收货地址,工作人员将在两个工作日内将您的旧机寄往指定地址。
+      </view>
+      <!-- 回寄表单 -->
+      <view class="order-form">
+        <view class="input-item">
+          <text class="grey">姓名:</text>
+          <input name="contact" type="text" maxlength="8"  placeholder="请填写收件人的名字" />
+        </view>
+        <view class="input-item">
+          <text class="grey">手机号:</text>
+          <input name="tel" type="number" maxlength="11"  placeholder="请填写收件人的手机号" />
+        </view>
+        <view class="input-item" onTap="showAreaSelector">
+          <text class="grey">省/市/区:</text>
+            <view class="picker-text">
+              <text style="color:{{index>0 ? '#999' : '#333'}};" a:if="{{province&&province.name}}">
+                {{province.name}} {{city.name}} {{district.name}}
+              </text>
+              <view class="flex" a:else>选择地区</view>
+              <image class="arrow-right" src="../../images/icons/arrow-right.png" /> 
+            </view>
+        </view>
+        <view class="input-item">
+          <text class="grey">详细地址:</text>
+          <input name="detailAddress" type="text" maxlength="25" placeholder="请输入详细地址" />
+        </view>
+      </view>
+
+  </view>
+   <!-- 提交 -->
+    <view class="footer">
+      <button form-type="submit" type="primary" size="defaultSize" style="border:none;background-color: #18AF78;"> 提交 </button>
+    </view>
+    </form>
+</view>
+<include src="../../components/areaSelector/selector.axml" />

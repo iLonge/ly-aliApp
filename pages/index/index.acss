@@ -1,13 +1,14 @@
 @import '../../components/list/index.acss';
 
 .page-index {
-    flex:1;
     display: flex;
     flex-direction: column;
+    min-height: 100vh; 
 }
 
 .swiper {
-    padding: 20rpx;
+    padding: 30rpx 0;
+    height: 160px;
 }
 
 .swiper image, .advertising image{
@@ -23,24 +24,26 @@
 }
 
 .search .search-box {
-    font-size: 32rpx;
+    font-size: 28rpx;
     width: 87%;
     height: 60rpx;
     color: #18AF78;
     padding-left: 12%;
     background: #EDEDED;
-    border-radius: 8rpx;
+    border-radius: 6rpx;
 }
 
 .search-icon {
     position: absolute;
     left: 8%;
-    top: 46rpx;
+    top: 50rpx;
     z-index: 99;
+    width: 32rpx;
+    height: 32rpx;
 }
 
 .keywords {
-    margin-top: 10rpx;
+    margin-top: 20rpx;
 }
 
 .model {
@@ -50,7 +53,7 @@
 }
 
 .advertising {
-    margin-top: 20rpx;
+    margin: 30rpx;
 }
 
 .recycling-process {
@@ -58,12 +61,23 @@
     background: #fff;
 }
 
+.a-list .a-list-item{
+    padding-left: 30rpx!important;
+}
+
+.a-list .a-list-item-line{
+    padding-right: 30rpx!important;
+}
+
 .a-list-item-content {
     color: #18AF78!important;
 }
 
 .hot-brand {
-    margin-top: 20rpx;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    background: #fff;
+    padding-bottom: 30rpx;
 }
 
 .brand-list {
@@ -71,7 +85,9 @@
     justify-content: space-between;
     align-items: center;
     flex-flow: wrap;
-    padding: 10rpx 20rpx;
+    padding: 20rpx 20rpx 0 20rpx;
+    background: #f8f8f8;
+
 }
 
 .brand-list-item {
@@ -79,6 +95,7 @@
     width: 25%;
     text-align: center;
     line-height: 1.6;
+    margin-bottom: 20rpx;
 }
 
 .cut-line {
@@ -96,7 +113,8 @@
     justify-content: space-between;
     align-items: center;
     flex-flow: wrap;
-    padding: 10rpx 20rpx;
+    padding: 20rpx 20rpx;
+    background: #f8f8f8;
 }
 
 .product-list-item {
@@ -113,9 +131,36 @@
 .product-list image{
     width: 100rpx;
     height: 160rpx;
-    margin: 20rpx 0 0 0;
+    margin: 30rpx 0 0 0;
 }
 
 .price {
     line-height: 2;
+}
+
+.footer {
+    text-align: center;
+    line-height: 2;
+    margin-top:70rpx;
+    margin-bottom: 30rpx;
+}
+
+.footer image {
+    width: 20rpx;
+    height: 20rpx;
+    margin-right: 10rpx; 
+}
+
+.ensure {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 10%;
+}
+.item-header{
+    padding: 30rpx;
+}
+.hot-telphone{
+    padding-bottom: 30rpx;
+    background: #fff;
 }

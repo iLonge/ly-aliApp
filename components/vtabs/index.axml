@@ -10,7 +10,7 @@
       <block a:for="{{tabs}}">
        <view
         data-index="{{index}}"
-        data-anchor="{{item.anchor}}"
+        data-anchor="{{index}}"
         onTap="handleTabClick"
         class="am-vtabs-bar-tab"
         style="{{
@@ -20,7 +20,7 @@
           backgroundColor: current == index ? tabBarActiveBgColor : tabBarInactiveBgColor
         }}"
         >
-        {{item.title}}
+        {{item.name}}
        </view>
       </block>
     </scroll-view>

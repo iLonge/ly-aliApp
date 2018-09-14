@@ -1,0 +1,42 @@
+<view class="page-submit-order-status">
+  <view class="article">
+    <view class="order-status-container">
+      <view class="status-success">
+        <image class="success-icon" src="../../images/icons/success.png" />
+        <view class="status-text">
+          订单提交成功
+        </view>
+        <view class="status-tips">
+          最终以商家质检价格为准
+        </view>
+      </view>
+      <view class="express-tips grey">
+        <text>顺丰即将上门收取快递</text>
+        <view>工作人员将会提前1小时与您联系，请保持手机畅通！</view>
+      </view>
+    </view>
+    
+    <view class="condition">
+      <text class="condition-title">达成以下两点，可提高手机回收准确性</text>  
+      <view>
+        <text>请备份数据并最好恢复出产设置\n</text> 
+        <text>解锁手机密码并注销所有账户</text>
+      </view>
+    </view>
+  </view>
+  <view class="zmxy">
+      <image src="../../images/icons/bottomLogo.png" />
+  </view>
+  <view class="footer">
+    <view class="continue-to-recycle">
+      <navigator url="../index/index" redirect hover-class="className">
+        继续回收
+      </navigator>
+    </view>
+    <view class="view-order"> 
+      <navigator url="../order-detail/order-detail?orderId={{orderId}}" redirect hover-class="className">
+        查看订单
+      </navigator>
+    </view>
+  </view>
+</view>

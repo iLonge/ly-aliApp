@@ -1,0 +1,86 @@
+.page-submit-order-status {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.order-status-container {
+    background-color: #fff;
+}
+
+.success-icon {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.status-success {
+    margin: 0 20rpx;
+    padding: 40rpx  0rpx 80rpx;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.status-success view {
+    line-height: 1.8;
+}
+
+.status-text {
+    font-size: 36rpx;
+    font-weight: 700;
+}
+
+.status-tips {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.express-tips {
+    font-size: 28rpx;
+    padding: 20rpx;
+    line-height: 1.5;
+}
+
+.condition {
+    margin-top: 20rpx;
+    padding: 20rpx;
+    line-height: 1.8;
+    background-color: #fff;
+}
+
+.condition-title {
+    font-size: 32rpx;
+}
+
+.zmxy {
+    padding: 20rpx;
+    text-align: center;
+}
+
+.zmxy image{
+    width: 400rpx;
+    height: 80rpx;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 98rpx;
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.footer view {
+    width: 50%;
+    height: 100%;
+    line-height: 98rpx;
+    text-align: center;
+}
+
+.continue-to-recycle {
+    background-color: #FFB23F;
+}
+
+.view-order {
+    background-color: #18B078;
+}

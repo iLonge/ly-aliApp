@@ -8,57 +8,58 @@
     tabBarUnderlineColor="{{tabBarUnderlineColor}}"
     tabBarActiveTextColor="{{tabBarActiveTextColor}}"
     activeTab="{{activeTab}}">
-    <block a:for="{{tabs}}">
+    <!-- <block a:for="{{tabs}}">
       <tab-content key="{{index}}">
-        <!-- <view class="tab-content">content of {{item.title}}</view> -->
-        <block>
-          <view class="tab-content-wrap">
-            <view class="item-header">
-              <text class="grey">订单号：{{1234567890123}}</text>
-              <text class="grey">首次检测</text>
-            </view>
-            <view class="item-content">
-              <view>
-                <image src="../../images/adv1.png" />
-              </view>
-              <view class="product-info">
-                <text>小米MIX2S全面屏游戏手机8GB256GBh黑色全网通4G陶瓷手机</text>
-                <text class="orange price">\n初检价格：{{ 1200.00 }}</text>
-              </view>
-              <view class="orange test-time">
-                2018-06-05 15:30
-              </view>
-            </view>
-            <view class="product-action">
-              <button type="warn" plain size="mini" style="margin-right:20rpx;">发货</button>
-              <button type="default" size="mini">取消</button>
-            </view>
-          </view>
-          <view class="tab-content-wrap">
-            <view class="item-header">
-              <text class="grey">订单号：{{1234567890123}}</text>
-              <text class="grey">已邮寄</text>
-            </view>
-            <view class="item-content">
-              <view>
-                <image src="../../images/adv1.png" />
-              </view>
-              <view class="product-info">
-                <text>小米MIX2S全面屏游戏手机8GB256GBh黑色全网通4G陶瓷手机</text>
-                <text class="orange price">\n初检价格：{{ 1200.00 }}</text>
-              </view>
-              <view class="orange test-time">
-                2018-06-05 15:30
-              </view>
-            </view>
-            <view class="product-action">
-              <navigator url='../order-detail/order-detail'>
-                <button type="default" size="mini">查看详情</button>
-              </navigator> 
-            </view>
-          </view>
-        </block>
+       
       </tab-content>
-    </block>
+      
+    </block> -->
   </tabs>
+   <block a:for={{orderList}} a:key={{index}}>
+      <view class="tab-content">
+        <view class="tab-content-wrap" key="{{index}}">
+          <view class="item-header">
+            <text class="grey">订单号：{{item.id}}</text>
+            <text class="grey">{{item.userStateName}}</text>
+          </view>
+          <view class="item-content">
+            <view>
+              <image src="http://img.epbox.cn/images/{{item.imageUrl}}"  mode='widthFix'/>
+            </view>
+            <view class="product-info">
+              <view>{{item.brandName}} {{item.modelName}}</view>
+              <text class="orange price">初检价格：{{ item.evalPrice }}</text>
+              <text class="orange price">回收日期：{{item.updatedAt}}</text>
+            </view>
+            <!-- <view class="orange test-time"></view> -->
+          </view>
+          <view class="product-action" a:if="{{item.state==='1' || item.state==='2' || item.state==='3'}}">
+            <button type="default" data-orderId="{{item.id}}" onTap="handleSend" size="mini" hover-class="onHover" class="orangeBt">发货</button>
+            <button type="default" data-orderId="{{item.id}}" data-state="{{item.state}}" size="mini" onTap="cancleOrder" hover-class="onHover">取消</button>
+            <button type="default" size="mini" hover-class="onHover" onTap="goDetail" data-id="{{item.id}}">查看详情</button>
+          </view>
+          <view 
+            class="product-action" 
+            a:if="{{item.state==='4'
+              || item.state==='6' 
+              || item.state==='7' 
+              || item.state==='8' 
+              || item.state==='9' 
+              || item.state==='10'
+              || item.state==='13'
+              || item.state==='20'}}"
+          >  
+            <button type="default" size="mini" hover-class="onHover" onTap="goDetail" data-id="{{item.id}}">查看详情</button>
+          </view>
+          <view class="product-action" a:if="{{item.state==='11'}}">
+            <!-- <button type="default" data-orderId="{{item.id}}" onTap="handleSend" size="mini" hover-class="onHover" class="orangeBt">发货</button> -->
+            <button type="default" size="mini" hover-class="onHover" onTap="goDetail" data-id="{{item.id}}">查看详情</button>
+          </view>
+          <view a:else></view>
+        </view>
+      </view>
+    </block>
+    <view class="no-data" a:if="{{!orderList.length}}"> 
+        暂无订单
+    </view>
 </view>

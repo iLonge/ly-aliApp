@@ -66,7 +66,7 @@
     flex: 1;
     flex: 1;
     color: #000;
-    font-size: .34rem;
+    font-size: .32rem;
     text-align: left;
     line-height: 1.5;
     width: auto;
@@ -84,7 +84,7 @@
 .a-list .a-list-item .a-list-item-extra {
     flex-basis: 36%;
     color: #888;
-    font-size: 32rpx;
+    font-size: 26rpx;
     text-align: right;
     line-height: 1.5;
     width: auto;
@@ -105,9 +105,9 @@
 
 .a-list .a-list-arrow {
     display: block;
-    width: 30rpx;
-    height: 30rpx;
-    margin-left: 16rpx;
+    width: 25rpx;
+    height: 25rpx;
+    margin-left: 5rpx;
     background-image: url('data:image/svg+xml;charset=utf-8,<svg width="16" height="26" viewBox="0 0 16 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="UI-KIT_基础元件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="9.9基础元件" transform="translate(-5809.000000, -8482.000000)" fill="#C7C7CC"><polygon id="Disclosure-Indicator" points="5811 8482 5809 8484 5820.5 8495 5809 8506 5811 8508 5825 8495"></polygon></g></g></svg>');
     background-size: contain;
     background-repeat: no-repeat;

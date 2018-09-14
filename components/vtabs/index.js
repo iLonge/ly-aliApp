@@ -32,16 +32,18 @@ Component({
 
     let cacheHeight = 0;
     for (let i = 0; i < tabs.length; i++) {
-      const { anchor } = tabs[i];
+      const { id } = tabs[i];
+      
       /* eslint-disable no-loop-func */
       my.createSelectorQuery()
-        .select(`#am-vtab-slide-${anchor}`)
+        .select(`#am-vtab-slide-${i}`)
         .boundingClientRect()
         .exec((ret) => {
-          this.anchorMap[anchor] = cacheHeight;
+          this.anchorMap[i] = cacheHeight;
           cacheHeight += ret[0].height;
           this.scrollWrapHeight = cacheHeight;
         });
+
     }
   },
   didUnmount() {
@@ -53,7 +55,6 @@ Component({
   methods: {
     handleTabClick(e) {
       const { anchor, index } = e.target.dataset;
-
       if (!this.isScrolling || !this.props.swipeable) {
         this.setData({
           wrapScrollTop: this.anchorMap[anchor],
@@ -64,11 +65,10 @@ Component({
     },
     moveScrollBar(current) {
       let tabTop;
-
-      if (current < 6) {
+      if (current < 46) {
         tabTop = 0;
       } else {
-        tabTop = (current - 5) * 55;
+        tabTop = (current - 45) * 55;
       }
 
       this.setData({
@@ -79,7 +79,6 @@ Component({
     onScroll(e) {
       const { scrollTop } = e.detail;
       const keys = Object.keys(this.anchorMap);
-
       if (this.timerId) {
         clearTimeout(this.timerId);
       }

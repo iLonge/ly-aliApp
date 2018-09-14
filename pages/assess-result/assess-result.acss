@@ -1,3 +1,9 @@
+.page-assess-result {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
 .notice {
     padding: 20rpx;
     text-align: center;
@@ -8,7 +14,7 @@
     font-size: 24rpx;
     color: #fff;
     width: 100%;
-    height: 320rpx;
+    height: 350rpx;
     background-color: #fff;
     background: url(../../images/recycle.png) no-repeat center;
 }
@@ -17,7 +23,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 20rpx;
+    padding: 30rpx;
+    padding-top:40rpx;
+    font-size: 28rpx;
 }
 
 .estimate-that image {
@@ -31,7 +39,7 @@
 }
 
 .text-xxl {
-    font-size: 64rpx;
+    font-size: 74rpx;
     font-weight: 500;
 }
 
@@ -42,6 +50,14 @@
 .tips {
     text-align: center;
     margin-top: 70rpx;
+    font-size: 28rpx;
+}
+
+.tips image {
+    width: 28rpx;
+    height: 28rpx;
+    margin-left: 20rpx;
+    vertical-align: middle;
 }
 
 .return {
@@ -50,6 +66,7 @@
     align-items: center;
     padding: 20rpx;
     background-color: #fff;
+    font-size: 28rpx;
 }
 
 .return image {
@@ -73,6 +90,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.privacy-tip view:first-child{
+    font-size: 28rpx;
+    margin-bottom:10rpx;
+}
+
+.privacy-tip text:first-child{
+    font-size: 24rpx;
+}
 
 .return-header image,
 .privacy image{
@@ -85,10 +110,14 @@ image.privacy-icon {
     width: 50rpx;
     height: 50rpx;
 }
-
+.grey{
+    font-size: 26rpx;
+}
 .return-header {
+    font-size: 32rpx;
     margin-top: 20rpx;
-    padding: 20rpx;
+    padding: 30rpx;
+    padding-bottom: 0rpx;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -111,6 +140,7 @@ image.privacy-icon {
 .box.top, .box.bottom {
     padding: 20rpx;
     height: auto;
+    z-index: 999
 }
 
 .box.left, .box.right {
@@ -148,3 +178,51 @@ image.privacy-icon {
     z-index: 999;
 }
 
+.assess-btn {
+    color:#fff;
+    border:0;
+    background-color:#30CECA;
+    position: fixed;
+    width: 100%;
+    bottom:0;
+    z-index: 10
+}
+
+.user-options, 
+.quality-details {
+    margin-top: 20rpx;
+    background-color:#fff;
+}
+
+.user-options{
+    margin-bottom: 200rpx;
+    padding-bottom: 20rpx;
+}
+
+.user-options-content {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 24rpx;
+    padding-bottom: 20rpx;
+}
+
+.order-img {
+    margin: 0 20rpx;
+}
+
+.user-options image, 
+.quality-details image, 
+.oreder-info image {
+    width: 80rpx;
+    height: 100rpx;
+}
+
+.product-desc {
+    padding: 0 0.2rem 0 0;
+    line-height: 1.7;
+    font-size: 26rpx;
+}
+.titlePhone{
+    font-size: 30rpx;
+    margin-bottom: 20rpx;
+}

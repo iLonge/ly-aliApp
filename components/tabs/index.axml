@@ -1,6 +1,5 @@
 <import-sjs name="util" from="./util.sjs"/>
-
-<view class="am-tabs {{className}}">
+<view class="am-tabs {{className}}" style="position:relative;margin-bottom:100rpx;">
   <view class="am-tabs-tab-bar-wrap">
     <view class="am-tabs-bar">
       <view class="am-tabs-bar-content-wrap">

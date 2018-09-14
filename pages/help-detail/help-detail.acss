@@ -5,15 +5,17 @@
     padding: 26rpx;
 }
 .title{
-    font-size:26rpx;
-    margin-bottom: 26rpx;
+    font-size:32rpx;
+    margin-bottom: 30rpx;
     background: url("../../images/icons/rightS.png");
-    background-position: right;
+    background-position: right center;
     background-repeat: no-repeat;
     background-size: 2%;
-    font-weight: bold;
+    color:#000;
 }
 .info{
-    font-size: 26rpx;
-    line-height: 40rpx;
+    font-size: 28rpx;
+    line-height: 52rpx;
+    color:#333;
 }
+

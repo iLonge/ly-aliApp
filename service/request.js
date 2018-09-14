@@ -16,11 +16,6 @@ function requestGetApi(url, params, sourceObj, successFun, failFun, completeFun)
 }
 
 function requestApi(url, params, method, sourceObj, successFun, failFun, completeFun) {
-    // if (method == 'POST') {
-    //     var contentType = 'application/x-www-form-urlencoded'
-    // } else {
-    //     var contentType = 'application/json'
-    // }
     my.httpRequest({
         url: url, 
         method: method,
@@ -28,6 +23,7 @@ function requestApi(url, params, method, sourceObj, successFun, failFun, complet
         dataType: 'json',
         headers: {
             'Content-Type': "application/json",
+            'cipher':my.getStorageSync({key:'cipher'}).data
         }, 
         success: function (res) {
             typeof successFun  == 'function' && successFun(res.data, sourceObj)
@@ -41,7 +37,22 @@ function requestApi(url, params, method, sourceObj, successFun, failFun, complet
     })
 }
 
+// 获取token
+const getCipher=(successFun, failFun)=>{
+    my.httpRequest({
+          url: "http://thirdtest.epbox.cn/channel_charge/api/alipay_applet/alipay_get_cipher", 
+          method: "post", 
+          success: function (res) {
+              typeof successFun  == 'function' && successFun(res.data)
+          },
+          fail: function (res) {
+              typeof failFun == 'function' && failFun(res.data)
+          },
+      })
+}
+
 module.exports = { 
 	requestPostApi,
-  requestGetApi
+  requestGetApi,
+  getCipher,
 }

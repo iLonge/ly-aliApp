@@ -31,7 +31,7 @@
 }
 
 .order-img {
-    margin: 0 20rpx;
+    margin: 0 20rpx; 
 }
 
 .user-options image, 
@@ -41,8 +41,17 @@
     height: 100rpx;
 }
 
+.order-img image{
+    height:150rpx;
+    width: 90rpx;
+}
+
 .product-desc {
     padding: 20rpx 0;
+}
+.product-desc text{
+    font-size: 28rpx;
+    line-height: 44rpx;
 }
 
 .product-money {
@@ -52,14 +61,62 @@
 }
 
 .product-money > view{
-    font-size: 24rpx;
+    font-size: 26rpx;
     display: flex;
     justify-content: space-between;
-    line-height: 1.8;
+    line-height: 2;
 }
 
 .contact {
     display: flex;
     justify-content: flex-end;
     padding: 20rpx;
+    margin-bottom: 120rpx;
+}
+.nomarPadding{
+    padding-top:0;
+}
+.titlePhone{
+    font-size: 30rpx;
+    margin-bottom: 10rpx;
+}
+
+.nones{
+    background: #f8f8f8;
+}
+
+.isRecycled, 
+.return-address {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.isRecycled view{
+    width: 50%;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.reject {
+    background: #ff6600;
+}
+
+.agree {
+    background: #18B078;
+}
+
+.return-address{
+  color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  background:  #ff6600!important;
 }

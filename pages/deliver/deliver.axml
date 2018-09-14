@@ -1,0 +1,41 @@
+<view>
+  <form onSubmit="handleSubmit" class="page-deliver">
+    <view class="flex-grow">
+      <view class="compensate form-style">
+          <view class="form-row">
+            <picker onChange="handlePickChange" name="expressPickIndex" range="{{express}}" value="{{index}}" range-key="expressCompany" >
+              <view class="flex-row form-label">
+                <view class="pick-title">快递公司：</view>         
+                <view class="flex-row space-between flex-grow">
+                  <input class="form-input" name="expressCompany" disabled="{{true}}" type="text" placeholder="请选择快递公司" value="{{express[index].expressCompany}}" />
+                  <image class="icon-img" src="../../images/icons/arrow-right.png" mode="aspectFill" />
+                </view>        
+              </view>
+            </picker>
+          </view>
+          <view class="form-hr"></view>
+          <view class="form-row form-label">
+            <view>快递单号：</view>
+              <input class="form-input" name="expressNo" type="text" placeholder="请输入快递单号"  />
+          </view>
+      </view>
+      <view class="compensate padding-row msg-style">
+        <view class="list-row row-title">请邮寄到以下地址</view>
+        <view class="list-row">收件人：壹站收</view>
+        <view class="list-row">联系电话：138-2317-8772</view>
+        <view class="list-row">邮寄地址：广东省深圳市福田区华强南御景华城花园1栋B座26c</view>
+      </view>
+      <view class="compensate padding-row msg-style">
+        <view class="list-row row-title">注意事项</view>
+        <view class="list-row">1.请自行保存个人资料以保护隐私</view>
+        <view class="list-row">2.解除手机开机密码和账号锁</view>
+        <view class="list-row">3.快递单上填写个人名字和电话号码</view>
+        <view class="list-row">4.请选择快递到付，无需支付快递费用，但保价费、包装费等其他费用自理</view>
+        <view class="list-row">5.请认真核对快递单号</view>
+      </view>
+    </view>
+    <view>
+      <button class="submit-btn"  form-type="submit" size="default"> 提交 </button>
+    </view>    
+  </form>
+</view>

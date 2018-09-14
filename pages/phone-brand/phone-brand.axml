@@ -1,36 +1,33 @@
-<view class="page-phone-brand">
+<view class="page-phone-brand" a:if="{{tabs.length > 0}}">
   <!-- 机型搜索 -->
-  <view class="search-container">
+  <view class="search-container" id="searchbox">
     <image class="search-icon" src="../../images/icons/search.png" />
-    <input class="search-box" type="text" placeholder="点击搜索查询其它机型" />
+    <view class="search-box" onTap="search">点击搜索查询其他机型</view>
   </view>
-  <view>
-    
-    <vtabs
-      tabs="{{tabs}}"
-      tabBarlineColor="{{tabBarlineColor}}"
-      tabBarActiveTextColor="{{tabBarActiveTextColor}}">
-      <view class="user-phone-model">
-        <view>
-          <image src="../../images/banner1.png" />
+  <!-- 机型选择 -->
+  <view class="phoneSelect-container">
+    <scroll-view class="leftBrand" scroll-y="true">
+      <view 
+        a:for="{{tabs}}" 
+        key="{{item}}" 
+        onTap="brand"
+        data-index="{{index}}"
+        data-brandId="{{item.id}}"
+        
+        style="{{
+          color: current == index || item.id ==cuerrentBrand ? tabBarActiveTextColor : tabBarInactiveTextColor,
+          borderLeftColor: current == index || item.id ==cuerrentBrand ? tabBarlineColor : tabBarInactiveBgColor,
+          borderRightColor: current == index || item.id ==cuerrentBrand ? tabBarActiveBgColor : tabBarInactiveBgColor,
+          backgroundColor: current == index || item.id ==cuerrentBrand ? tabBarActiveBgColor : tabBarInactiveBgColor
+        }}"
+      >
+        {{item.name}}
+      </view>
+    </scroll-view> 
+    <scroll-view class="rightModal" scroll-y="true">
+        <view a:for="{{modal}}" key="{{item}}" data-modalId="{{item.id}}" data-brandId="{{item.brandId}}" data-modalName="{{item.name}}" data-brandName="{{item.brandName}}" onTap="assess">
+            {{item.name}}
         </view>
-        <view>
-          <text>检测到您的手机为</text>
-          <view>
-            {{userPhone}}
-          </view>
-        </view>
-        <view>
-          <button type="default" size="mini" onTap="defaultTap">查询本机价格</button>
-        </view>
-      </view> 
-      <block a:for="{{tabs}}">
-        <vtab-content id="{{item.id}}">
-          <view style="1px solid #eee; height: 800px; box-sizing: border-box">
-            <text>content of {{item.name}}</text>
-          </view>
-        </vtab-content>
-      </block>
-    </vtabs>
+    </scroll-view>
   </view>
 </view>

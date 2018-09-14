@@ -1,0 +1,157 @@
+
+.page-submit-order-detail{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.congratulat {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20rpx;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.congratulat image {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 20rpx;
+}
+
+.congratulat-txt {
+    font-size: 36rpx;
+    line-height: 1.5;
+}
+
+.recycl-method {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.item-header {
+    padding: 20rpx 0;
+}
+
+.recycl-method view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100rpx;
+    height: 100rpx;
+    margin: 20rpx;
+    padding: 20rpx;
+    border: 1px solid #ddd;
+}
+
+view.method-active {
+    background-color: #F8FFFD;
+    border: 1px solid #18AF78;
+}
+
+.recycl-method image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.order-info {
+    padding: 0 20rpx;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 0;
+    border-bottom: 1px solid #ddd;
+}
+.order-item image {
+    width: 70rpx;
+    height: 100rpx;
+}
+
+image.right,
+.help-icon {
+    width: 32rpx;
+    height: 32rpx;
+    vertical-align: middle;
+}
+
+.order-item .grey {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:nowrap
+}
+
+.order {
+    width: 600rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 20rpx;
+    line-height: 1.8;
+}
+
+.order-price{
+    padding: 10rpx 0;
+    border-bottom: 1px solid #ddd; 
+}
+
+.order-price view,
+.credit-advance view {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.8;
+}
+
+.credit-advance {
+    padding: 10rpx 0;
+}
+
+.service {
+    padding: 20rpx;
+}
+
+.service view{
+    line-height: 1.5;
+}
+
+.smile-icon {
+    width: 24rpx;
+    height: 24rpx; 
+    vertical-align: middle;
+}
+
+.agreement {
+    margin-top: 20rpx;
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+.recycling-amount {
+    width: 66%;
+    height: 120rpx;
+    line-height: 120rpx;
+    background-color: #FFB23F;
+}
+
+.submit-order {
+    width: 34%;
+    height: 120rpx;
+    line-height: 120rpx;
+    background-color: #18B078;
+}

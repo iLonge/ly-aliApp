@@ -1,104 +1,114 @@
 <view class="page-assess-result">
-  <!-- 环保达人 -->
-  <view class="notice">
-    <text>您将成为第3943位环保达人</text>
-  </view>
-  <!-- valuation -->
-  <view class="valuate-price">
-    <view class="estimate-that">
-      <text>估价说明</text>
-      <image onTap="onButtomBtnTap" src="../../images/icons/info.png" /> 
-    </view>
-    <view class="price">
-      <text class="rmb">￥</text>
-      <text class="text-xxl">2250.00</text>
-      <view>
-        <text>预计下月降幅￥50</text>
+  <view class="article">
+    <!-- 环保达人 -->
+    <!-- <view class="notice">
+      <text>您将成为第3943位环保达人</text>
+    </view> -->
+    <!-- valuation -->
+    <view class="valuate-price">
+      <view class="estimate-that">
+        <text>估价说明</text>
+        <image onTap="onButtomBtnTap" data-type="1" src="../../images/icons/info.png" /> 
       </view>
-    </view>
-    <view class="tips">
-      手机回收市场价格实时变化,如果您觉得价格合适请尽早回收
-    </view>
-  </view>
-  <view class="return">
-    <image src="../../images/icons/aliIcon.png" />
-    通过信用评估后即可先得部分回收款
-  </view>
-  <!-- 隐私安全 -->
-  <view class="privacy">
-    <image class="privacy-icon" src="../../images/icons/privacy.png" />
-    <view class="privacy-tip" onTap="onButtomBtnTap">
-      <view>
-        多重规范保障隐私安全
+      <view class="price">
+        <text class="rmb">￥</text>
+        <text class="text-xxl">{{evalPrice}}</text>
+        <!-- <view>
+          <text>预计下月降幅￥50</text>
+        </view> -->
       </view>
-      <text class="small grey">手机恢复出厂设置是无须担心数据泄露风险的发股份萨法岁哦发发货撒即可东方红发</text>
+      <!-- <view class="tips" data-type="2" onTap="onButtomBtnTap" >
+        凭芝麻信用，提交信用回收订单先得70%回收款
+        <image src="../../images/icons/help.png" />
+      </view> -->
     </view>
-    <image src="../../images/icons/arrow-right.png" />
-  </view>
-  <!-- 回收流程 -->
-  <view>
-    <view class="return-header">  
-      <text class="success">回收流程</text>
-      <navigator url="" redirect hover-class="className">
-        <text class="grey small">了解回收</text>
-        <image src="../../images/icons/arrow-right.png" />
-      </navigator>
+    <view class="return">
+      <image src="../../images/icons/aliIcon.png" />
+      通过信用评估后即可先得部分回收款
     </view>
-    <view class="process-step">
-      <image src="../../images/icons/step1.png" /> 
-      <image src="../../images/icons/step-arrow.png" /> 
-      <image src="../../images/icons/step2.png" /> 
-      <image src="../../images/icons/step-arrow.png" /> 
-      <image src="../../images/icons/step3.png" /> 
-      <image src="../../images/icons/step-arrow.png" /> 
-      <image src="../../images/icons/step4.png" /> 
-    </view>
-    <view class="step-text">
-      <text>通过评估\n提交订单</text>
-      <text>信用预付</text>
-      <text>旧机质检</text>
-      <text>补齐尾款</text>
-    </view>
-  </view>
-  <popup show="{{showBottom}}" position="bottom" onClose="onPopupClose">
-    <view class="box bottom">
-      <button onTap="onPopupClose" style="width:0;height:0;visibilite:hidden;">
-        <icon class="clear-icon" type="clear" size="22"></icon>
-      </button>
-      <view class="popup-title">
-        苹果安全小贴士 
-      </view> 
-      <view class="popup-content">
+    <!-- 隐私安全 -->
+    <view class="privacy">
+      <image class="privacy-icon" src="../../images/icons/privacy.png" />
+      <view class="privacy-tip" data-type="3" onTap="onButtomBtnTap">
         <view>
-          苹果手机只能恢复出厂设置，无须担心数据泄露风险，请当心，这是真的！美国FBI都破解不了。
+          多重规范保障隐私安全
+        </view>
+        <text class="grey">手机恢复出厂设置是无须担心数据泄露风险的</text>
+      </view>
+      <image src="../../images/icons/arrow-right.png" />
+    </view>
+    <!-- 回收流程 -->
+    <view>
+      <view class="return-header">  
+        <text class="success">回收流程</text>
+        <navigator url="/pages/help/help" redirect hover-class="className">
+          <text class="grey">了解回收</text>
+          <image src="../../images/icons/arrow-right.png" />
+        </navigator>
+      </view>
+      <view class="process-step">
+        <image src="../../images/icons/step1.png" /> 
+        <image src="../../images/icons/step-arrow.png" /> 
+        <image src="../../images/icons/step2.png" /> 
+        <image src="../../images/icons/step-arrow.png" /> 
+        <image src="../../images/icons/step3.png" /> 
+        <image src="../../images/icons/step-arrow.png" /> 
+        <image src="../../images/icons/step4.png" /> 
+      </view>
+      <view class="step-text">
+        <text>评估提交</text>
+        <text>信用预付</text>
+        <text>旧机质检</text>
+        <text>补齐尾款</text>
+      </view>
+    </view>
+    <!-- 用户选项 -->
+    <view class="user-options">
+      <view class="item-header"> 
+        用户选项
+      </view>
+      <view class="user-options-content">
+        <view class="order-img">
+          <image src="http://img.epbox.cn/images/{{orderData.orderInfo.modelPic}}" mode="widthFix"/>
         </view>
         <view>
+          <view class="grey titlePhone">
+            {{orderData.orderInfo.brandName}} {{orderData.orderInfo.modelName}}
+          </view>
+          <view class="product-desc">
+            <text> 
+              {{algorithmProcess}} 
+            </text>
+            <!-- <text>\n 2+32G</text> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <popup show="{{showBottom}}" position="bottom" onClose="onPopupClose">
+      <view class="box bottom">
+        <button onTap="onPopupClose" style="width:0;height:0;visibilite:hidden;">
+          <icon class="clear-icon" type="clear" size="22"></icon>
+        </button>
+        <view a:if="">
+        <view class="popup-title">
+          {{popupTitle}} 
+        </view> 
+        <view class="popup-content">
           <view>
-            1.估价基于您自检选择的机器情况进行标准的评估报价，绝不压价。
+            {{ popupContent }}
           </view>
-          <view class="grey">
-            以iPhone为例，在iphone上所存储的每个文件都有单独随机生成的密钥进行加密。经过多层加密之后，
-            文件才第一安全的存储iphone的磁盘上。
+          <view>
+            <block a:for="{{popupContentList}}">
+              <view>{{item}}</view>
+            </block>
           </view>
         </view>
-        <view>
-          <view>
-            2.抹掉所有数据，等于抹掉所有文件
-          </view>
-          <view class="grey">
-            用户抹掉数据以及所有设置之后，就等于抹掉了所有文件的密钥。如果想要恢复数据，就需要破解逐层加密。
-            因此通过IPhone官方提供的抹掉数据和设置后被恢复的可能几乎为零。
-          </view>
-         <view>
-           <view>
-             3.此前FBI也遇到了破解iphone的难题
-            </view>
-            <view class="grey">
-              3.用户抹掉数据以及所有设置之后，就等于抹掉了所有文件的密钥。如果想要恢复数据，就需要破解逐层加密。
-              因此通过IPhone官方提供的抹掉数据和设置后被恢复的可能几乎为零。
-            </view>
         </view>
       </view>
-    </view>
-  </popup>
+    </popup>
+  </view>
+  <!-- 底部信用回收 -->
+  <view class="footer" a:if="{{!showBottom}}">
+    <button type="default" size="defaultSize" class="assess-btn" onTap="creditRent">即享信用回收服务</button>
+  </view>
 </view>

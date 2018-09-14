@@ -18,15 +18,15 @@ page {
 }
 
 .orange {
-  color: #FFA264;
+  color: #FFb23F;
 }
 
 .danger {
-  color: #FE0B0C;
+  color: #FF0000;
 }
 
 .success {
-  color: #18AF78;
+  color: #18B078;
 }
 
 .small {
@@ -45,7 +45,7 @@ page {
 .process-step {
   display: flex;
   justify-content: space-around;
-  padding: 20rpx 20rpx 0 20rpx;
+  padding: 30rpx 30rpx 0 30rpx;
   background-color: #fff;
 }
 
@@ -65,11 +65,11 @@ page {
 }
   
 .step-text {
-  font-size: 28rpx;
+  font-size: 26rpx;
   display:flex;
   text-align: center;
   justify-content: space-between;
-  padding: 20rpx;
+  padding: 30rpx;
   background-color: #fff;
 }
 

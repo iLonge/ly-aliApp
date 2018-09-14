@@ -6,7 +6,8 @@
     justify-content: center;
     align-items: center;
     padding: 20rpx;
-    background-color: #fff;
+    background-color: #efefef;
+    height:100rpx;
 }
 
 .search-icon {
@@ -18,12 +19,12 @@
 .search-box {
     font-size: 28rpx;
     color: #fff;
-    width: 70%;
+    width: 100%;
     height: 80rpx;
     text-align: center;
-    padding-left: 20%;
-    border-radius: 12rpx;
+    border-radius: 8rpx;
     background-color: #18AF78;
+    line-height: 80rpx;
 }
 
 .user-phone-model {
@@ -46,3 +47,46 @@
     font-size: 20rpx;
     background-color: #EFEFEF; 
 }
+
+
+/* 新布局样式 */
+.page-phone-brand{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width:100%;
+}
+
+.phoneSelect-container{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    overflow: hidden
+}
+.leftBrand{
+    width:200rpx;
+    background: #efefef;
+}
+.leftBrand view{
+    height:80rpx;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    color:#7c7c7c;
+    border-left-width: 8rpx;
+    border-left-style: solid;
+    border-left-color: transparent;
+}
+.rightModal{
+    flex: 1;
+    background: #fff;
+}
+.rightModal view{
+    height:80rpx;
+    text-indent: 50rpx;
+    line-height: 80rpx;
+    font-size: 28rpx;
+}
+

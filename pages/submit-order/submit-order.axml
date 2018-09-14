@@ -1,80 +1,84 @@
-<view class="page-submit-order">
-  <view class="article">
-    <view class="item-header">
-      免费上门取件，请准确填写地址和时间
-    </view>
-    <!-- 订单表单 -->
-    <view class="order-form">
-      <view class="input-item">
-        <text class="grey">联系人:</text>
-        <input type="text" maxlength="6" placeholder="联系人姓名" />
+<view>
+  <form onSubmit="handleSubmit" class="page-submit-order">
+    <view class="article">
+      <view class="item-header">
+        免费上门取件，请准确填写地址和时间
       </view>
+      <!-- 订单表单 -->
+      <view class="order-form">
+        <view class="input-item">
+          <text class="grey">联系人:</text>
+          <input name="contact" type="text" maxlength="8"  placeholder="联系人姓名" />
+        </view>
 
-      <view class="input-item">
-        <text class="grey">联系电话:</text>
-        <input type="number" maxlength="11" placeholder="联系人姓名" />
-      </view>
+        <view class="input-item">
+          <text class="grey">联系电话:</text>
+          <input name="tel" type="number" maxlength="11"  placeholder="联系电话" />
+        </view>
 
-      <view class="input-item">
-        <text class="grey">快递类型:</text>
-        <picker onChange="bindPickerChange" value="{{index}}" range="{{array}}">
-          <view class="picker-text">
-            <text style="color:{{index>0 ? '#333' : ''}};">
-              {{array[index]}}
-            </text>
-            <image class="arrow-right" src="../../images/icons/arrow-right.png" />
-          </view>    
-        </picker>
-      </view>
-
-      <view class="input-item">
-        <text class="grey">所在地区:</text>
-        <picker onChange="bindPickerChange" value="{{index}}" range="{{array}}">
-          <view class="picker-text">
-            <text style="color:{{index>0 ? '#333' : ''}};">
-              {{array[index]}}
-            </text>
-            <image class="arrow-right" src="../../images/icons/arrow-right.png" />
-          </view>    
-        </picker>
-      </view>
-
-      <view class="input-item">
-        <text class="grey">详细地址:</text>
-        <input type="text" maxlength="25" placeholder="请输入详细地址" />
-      </view>
-
-      <view class="input-item" style="justify-content: flex-start;">
-        <text class="grey">取件时间:</text>
-        <view class="input-item" style="justify-content: flex-start; border-bottom:none;">
-          <picker mode="date" format="yyyy-MM-dd HH:mm" value="{{date}}" onChange="bindDateChange">  
-            <view class="picker-text" style="width:auto;">
-              <text style="color:{{index>0 ? '#333' : '#18AF78'}};">
-                {{dates}}  
+        <view class="input-item">
+          <text class="grey">快递类型:</text>
+          <picker onChange="bindPickerChange" value="{{index}}" range={{expressArr}}>
+            <view class="picker-text">
+              <text style="color:#333;display:inline-block;height:16px;">
+                {{expressArr[index]}}
               </text>
-            </view>  
-          </picker>  
-          <picker mode="time" value="{{time}}" start="00:00" end="23:59" onChange="bindTimeChange">  
-            <view class="picker-text" style="width:auto;">
-              <text style="color:{{index>0 ? '#333' : '#18AF78'}};">
-              {{times}}
-              </text>
-            </view>  
+              <image class="arrow-right" src="../../images/icons/arrow-right.png" />
+            </view>    
           </picker>
+        </view>
+        <view class="input-item" onTap="showAreaSelector">
+          <text class="grey">所在地区:</text>
+            <view class="picker-text">
+              <text style="color:{{index>0 ? '#999' : '#333'}};" a:if="{{province&&province.name}}">
+                {{province.name}} {{city.name}} {{district.name}}
+              </text>
+              <view class="flex" a:else>选择地区</view>
+              <image class="arrow-right" src="../../images/icons/arrow-right.png" /> 
+            </view>
+        </view>
+        <view class="input-item">
+          <text class="grey">详细地址:</text>
+          <input name="detailAddress" type="text" maxlength="25" placeholder="请输入详细地址" />
+        </view>
+
+        <!-- <view class="input-item" style="justify-content: flex-start;">
+          <text class="grey">取件时间:</text>
+          <view class="input-item" style="justify-content: flex-start; border-bottom:none;">
+            <picker mode="date" format="yyyy-MM-dd HH:mm" value="{{date}}" onChange="bindDateChange">  
+              <view class="picker-text" style="width:auto;">
+                <text style="color:{{index>0 ? '#333' : '#18AF78'}};">
+                  {{dates}}  
+                </text>
+              </view>  
+            </picker>  
+            <picker mode="time" value="{{time}}" start="00:00" end="23:59" onChange="bindTimeChange">  
+              <view style="width:auto;">
+                <text style="color:{{index>0 ? '#333' : '#18AF78'}};">
+                {{times}}
+                </text>
+              </view>  
+            </picker>
+          </view>
+        </view> -->
+      </view>
+      <!-- 客服 -->
+      <view class="service grey small">
+        <text>客服电话: 400-825-2250 (周一至周五9:00-18:00)</text>
+        <view>
+          <navigator url="../service/service" redirect hover-class="className">
+            <image style="width:30rpx;height:30rpx;vertical-align:middle;" src="../../images/icons/service1.png" />
+            <text class="success">在线客服</text>
+          </navigator>
         </view>
       </view>
     </view>
-    <!-- 客服 -->
-    <view class="service grey small">
-      <text>客服电话: 400-825-2250 (周一至周五9:00-18:00)</text>
-      <view>
-        <image style="width:30rpx;height:30rpx;" src="../../images/icons/service.png;" />
-        <text class="success">在线客服</text>
-      </view>
+    <!-- 提交 -->
+    <view class="footer">
+      <button form-type="submit" type="primary" size="defaultSize" style="border:none;background-color: #18AF78;"> 提交 </button>
     </view>
-  </view>
-  <!-- 提交 -->
-  <view class="footer">
-    <button form-type="submit" type="primary" size="defaultSize" onTap="defaultTap" style="border:none;background-color: #18AF78;"> 提交 </button>
-  </view>
+    <!--  -->
+  </form>
 </view>
+
+<include src="../../components/areaSelector/selector.axml" />

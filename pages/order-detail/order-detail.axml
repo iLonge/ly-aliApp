@@ -6,41 +6,39 @@
     </view>
     <view class="user-options-content">
       <view class="order-img">
-        <image src="../../images/banner1.png" />
+        <image src="http://img.epbox.cn/images/{{orderData.orderInfo.modelPic}}" />
       </view>
       <view>
-        <view class="grey">
+        <view class="grey titlePhone">
           {{orderData.orderInfo.brandName}} {{orderData.orderInfo.modelName}}
         </view>
-        <view class="product-desc">
+        <view class="product-desc nomarPadding">
           <text> 
             {{algorithmProcess}} 
           </text>
-          <text>\n 2+32G</text>
+          <!-- <text>\n 2+32G</text> -->
         </view>
       </view>
     </view>
   </view>
   <!-- 质检详情 -->
-  <view class="quality-details">
+  <view class="quality-details" a:if="{{secondAlgorithmProcess}}">
     <view class="item-header"> 
       质检详情
     </view>
     <view class="quality-details-content">
       <view class="order-img">
-        <image src="../../images/banner1.png" />
+        <image src="http://img.epbox.cn/images/{{orderData.orderInfo.modelPic}}" />
       </view>
       <view>
         <view class="grey">
-          小米MIX2S 全面屏游戏手机
+         {{orderData.orderInfo.brandName}} {{orderData.orderInfo.modelName}}
         </view>
         <view class="product-desc">
           <view> 
-            <text class="success">正常开机，通话正常，无维修情况，指纹功能正常,
-            拍照摄像正常，充电正常，无任何异常，</text>  
-            <text class="danger">是否是尽快发货速度发来撒可发货弗利萨鸿福路</text>
+            <text> {{algorithmProcess}} </text>
           </view>
-          <text>2+32G</text>
+          <!-- <text>2+32G</text> -->
         </view>
       </view>
     </view>
@@ -48,37 +46,37 @@
   <!-- 订单信息 -->
   <view class="oreder-info">
     <view class="product-money">
-      <view class="grey">
+      <!-- <view class="grey">
         <text>物品金额</text>
         <text>￥1000</text>
       </view>
       <view class="grey">
         <text>询价金额</text>
         <text>￥1000</text>
-      </view>
+      </view> -->
       <view class="grey">
         <text>订单总额</text>
-        <text>￥1000</text>
+        <text>￥{{orderData.orderInfo.evalPrice}}</text>
       </view>
     </view>
     <view class="product-money">
-      <view>
+      <!-- <view>
         <text>凭芝麻信用获得预支金额:</text>
         <text class="success">￥1000</text>
       </view>
       <view>
         <text>余额(质检后打款):</text>
         <text class="danger">￥1000</text>
-      </view>
+      </view> -->
       <view>
         <text>质检后价格:</text>
         <text class="success">￥{{orderData.orderInfo.evalPrice}}</text>
       </view>
-      <view class="danger">
+      <!-- <view class="danger">
         <text>余额实付款:</text>
         <text>￥1000</text>
-      </view>
-      <view class="small grey">
+      </view> -->
+      <view class="grey">
         说明: 质检后结算尾款,最终以商家质检价格为准,多退少补。
       </view>
     </view>
@@ -103,7 +101,26 @@
   </view>
   <!-- 联系客服/发货 -->
   <view class="contact">
-    <button type="default" size="mini" style="margin-right: 20rpx;"> 联系客服 </button>
-    <button type="default" size="mini"> 发货 </button>
+    <button type="default" size="mini" style="margin-right: 20rpx;" hover-class="nones">
+      <navigator url="../service/service" hover-class="none"> 
+        联系客服 
+      </navigator>
+    </button>
+    <button a:if="{{orderData.orderInfo.state ==='1' || orderData.orderInfo.state==='2' || orderData.orderInfo.state==='3'}}" type="default" onTap="handleSend" size="mini"> 
+      发货 
+    </button>
+  </view>
+  <!-- footer -->
+  <view class="isRecycled" a:if="{{orderData.orderInfo.state =='8'}}"> 
+      <view class="reject" onTap="HandleReject">
+        取消回收
+      </view>
+      <view class="agree" onTap="HandleAgree">
+        同意回收
+      </view>
+  </view>
+  <!-- 回寄地址填写  -->
+  <view class="return-address" a:if="{{isReturn }}"  onTap="handleReturnAddress">
+      回寄地址填写
   </view>
 </view>

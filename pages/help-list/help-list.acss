@@ -1,0 +1,21 @@
+/* 帮助搜索结果页 */
+.container{
+    margin-top:26rpx;
+    background: #fff;
+    padding: 26rpx;
+}
+.title{
+    font-size:28rpx;
+    background: url("../../images/icons/rightS.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 2%;
+    border-bottom: 2rpx solid #eee;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+.title:last-child{
+    border:none;
+}
+
+

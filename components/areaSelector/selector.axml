@@ -1,0 +1,28 @@
+<view class="areaSelectorBg" a:if="{{_area_showSelector}}" catchTap="_area_hideAreaSelector">
+    <view class="areaContainer" catchTap>
+        <view class="areaHead" >
+            <block a:for="{{_area_areaList}}" a:key="*this">
+                <view catchTap="_area_reselectArea" data-level="{{index}}" a:if="{{item}}"class="areaHeadItem pressLighter {{_area_activeTab==index&&'areaHeadItemChecked'}}">
+                    {{_area_checkedIndexArr[index]!=null?item[_area_checkedIndexArr[index]].name:'请选择'}}
+                </view>
+            </block>
+            <text style="flex: 1"/>
+            <text a:if="{{_area_selectAllArea}}" catchTap="_area_hideAreaSelector" class="areaClose pressLighter">关闭</text>
+            <text a:else catchTap="_area_commitArea" class="areaCommit pressLighter">确定</text>
+        </view> 
+        <swiper class="areaBody" current="{{_area_activeTab}}" onChange="_area_areaSwipe">
+            <block a:for="{{_area_areaList}}" a:if="{{item}}" a:key="*this" a:for-index="level">
+                <swiper-item>
+                    <scroll-view scroll-y="true">
+                        <view class="itemContainer">
+                        <block a:for="{{item}}" a:key="id"  >
+                           <text catchTap="_area_selectAreaItem" class="areaBodyItem pressLighter"
+                                 data-id="{{item.id}}" data-index="{{index}}" data-level="{{level}}">{{item.name}}</text>
+                        </block>
+                        </view>
+                    </scroll-view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</view>

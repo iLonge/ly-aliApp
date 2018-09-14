@@ -1,0 +1,4 @@
+<!-- 帮助详情 -->
+<view class="container">
+    <view class="title" a:for="{{search}}" onTap="goDetail" data-id="{{item.id}}">{{item.question}}</view>
+</view>

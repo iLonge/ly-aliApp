@@ -1,0 +1,43 @@
+/* 客服 */
+.container{
+    width: 80%;
+    margin: auto;
+    margin-top:30%;
+}
+.serviceTitle{
+    height:80rpx;
+    line-height: 80rpx;
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    background: -moz-linear-gradient(bottom, #c1e9f3, #fff);
+    background: -webkit-gradient(linear,bottom,from(#c1e9f3),to(#fff));
+    background: -webkit-linear-gradient(bottom, #c1e9f3, #fff);
+    background: -o-linear-gradient(bottom, #c1e9f3, #fff);
+    background: linear-gradient(bottom, #c1e9f3, #fff);
+    border-radius: 10rpx;
+    padding-left:30rpx;
+}
+.serviceContent{
+    font-size: 28rpx;
+    margin-bottom: 25rpx;
+    margin-top: 20rpx;
+    line-height: 50rpx;
+}
+
+.people{
+    background-image: url("http://wxtest.epbox.cn/activity/customer-service/kefu.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 75%;
+    height: 60rpx;
+    width: 60rpx;
+}
+.phone{
+    background-image: url("http://wxtest.epbox.cn/activity/customer-service/phone.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 75%;
+    height: 60rpx;
+    width: 60rpx;
+}

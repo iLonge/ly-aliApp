@@ -1,3 +1,4 @@
+
 require('./config$');
 require('./importScripts$');
 function success() {
@@ -8,16 +9,23 @@ require('../../components/vtabs/index');
 require('../../components/vtabs/vtab-content/index');
 require('../../components/popup/index');
 require('../../pages/index/index');
-require('../../pages/todos/todos');
-require('../../pages/add-todo/add-todo');
 require('../../pages/order-center/order-center');
 require('../../pages/help/help');
 require('../../pages/service/service');
+require('../../pages/submit-status/submit-status');
+require('../../pages/assess/assess');
+require('../../pages/help-detail/help-detail');
+require('../../pages/help-list/help-list');
+require('../../pages/search/search');
 require('../../pages/order-detail/order-detail');
 require('../../pages/phone-brand/phone-brand');
 require('../../pages/assess-result/assess-result');
-require('../../pages/submit-courier/submit-courier');
+require('../../pages/deliver/deliver');
+require('../../pages/submit-order-detail/submit-order-detail');
 require('../../pages/submit-order/submit-order');
 require('../../pages/recycling-car/recycling-car');
+require('../../pages/agreement/agreement');
+require('../../pages/common-recycling-problems/common-recycling-problems');
+require('../../pages/return-address/return-address');
 }
 self.bootstrapApp ? self.bootstrapApp({ success }) : success();

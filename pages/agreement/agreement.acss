@@ -1,0 +1,21 @@
+.page-agreement {
+    padding: 20rpx;
+    line-height: 1.8;
+    color: #666;
+}
+
+.page-agreement-title {
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #333;
+}
+
+.sub-title {
+    font-size: 24rpx;
+    font-weight: 600;
+    color: #333;
+}
+
+.article {
+    text-indent:2em;
+}

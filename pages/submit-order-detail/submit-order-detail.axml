@@ -1,0 +1,105 @@
+<view class="page-submit-order-detail">
+  <view class="article">
+    <view class="congratulat">
+    <image src="../../images/icons/smile.png" />
+    <view>
+      <view class="congratulat-txt">
+        恭喜您可享用"信用回收"服务
+      </view>
+      <text>选择信用回收,下单后即得<text class="success">￥{{creditAmount}}</text>预付款</text>
+    </view>
+  </view>
+  <!-- 回收方式 -->
+  <view class="recycl-method">
+    <view class="method-active">
+      <image src="../../images/icons/recycl.png" />
+      <text>信用回收</text>
+    </view>
+    <!-- <view>
+      <image src="../../images/icons/recycl.png" />
+      <text>机器回收</text>
+    </view> -->
+  </view>
+  <!-- 订单信息 -->
+  <view class="order-info">
+    <view class="item-header" style="padding-bottom:0;">
+      订单信息
+    </view>
+    <view class="order-item">
+      <image src="http://img.epbox.cn/images/{{orderData.orderInfo.modelPic}}" />
+      <navigator url="../order-detail/order-detail?orderId={{orderId}}" class="order">
+        <view>{{orderData.orderInfo.brandName}} {{orderData.orderInfo.modelName}}</view>
+        <text class="grey">{{algorithmProcess}}</text>
+      </navigator>
+      <image class="right" src="../../images/icons/arrow-right.png" />
+    </view>
+    <view class="order-price">
+      <view>
+        <text>预估价</text>  
+        <text>￥{{amount}}</text>
+      </view>
+      <!-- <view>
+        <text>回收增值券</text>  
+        <text>0</text>
+      </view> -->
+      <!-- <view>
+        <text>合计</text>  
+        <text>￥{{creditAmount}}</text>
+      </view> -->
+    </view>
+    <view class="credit-advance">
+      <view style="color: #7DE0DE;">
+        <text>信用预付款(上门取件后打款)</text>
+        <text>
+          <image src="../../images/icons/aliIcon.png" style="margin-right:20rpx;display:inline-block;width:28rpx;height:28rpx;" />
+          ￥{{creditAmount}}
+        </text>
+      </view>
+      <view>
+        <text>余额(质检后打款)</text>
+        <text>￥{{balance}}</text>
+      </view>
+      <view class="grey">
+        <text class="small">说明: 质检后结算尾款，最终以商家质检的价格为准,多退少补。</text>
+      </view>
+    </view>
+  </view>
+  <view class="service">
+    <view class="grey">
+      <text>客服电话：</text>
+      <text onTap="makePhoneCall">400-825-2250</text>
+      <text style="margin-left: 20rpx;">
+        (周一至周五 9:00-18:00)
+      </text>
+    </view>
+    <view class="success">
+      <image class="smile-icon" src="../../images/icons/smile.png" />
+      <text>在线客服</text> 
+    </view>
+    <view class="agreement grey">
+      <text>
+        提交订单需要免密代扣协议,交易完成后自动解除
+      </text>
+
+      <view>
+        <text>
+          提交订单前确保您已阅读并同意
+        </text>
+        <navigator style="display:inline-block;" url="../agreement/agreement" hover-class="className">
+          <text class="success">用户协议</text>
+          <image class="help-icon" src="../../images/icons/agreement.png" />
+        </navigator>
+      </view>
+    </view>
+  </view>
+  </view>
+  <!-- footer -->
+  <view class="footer">
+    <view class="recycling-amount">
+      回收金额：￥{{creditAmount}}
+    </view>
+    <view class="submit-order" onTap="submitOrder">
+      提交订单
+    </view>
+  </view>
+</view>

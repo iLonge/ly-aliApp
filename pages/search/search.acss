@@ -1,23 +1,59 @@
-.search-list {
-    padding: 20rpx;
-    background-color: #fff;
+/* 搜索框 */
+.topSearch{
+    height:100%;
+    background: #fff;
+    width: 100%;
+    position: absolute;
+}
+.searchBox{
+    background: #fff;
+    border-radius: 6rpx;
+    height:80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 26rpx;
+    border-bottom:2rpx solid #dedede;
+}
+.searchBox view{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    height:60rpx;
+}
+.searchBox view image{
+    height:32rpx;
+    width:40rpx;
+    margin-left:40rpx;
+}
+.searchBox view input{
+    font-size:32rpx;
+    height:60rpx;
+    padding: 0;
+    width: 97%;
+    margin-left:10rpx;
+    background: #eee;
+    padding-left:3%;
+    border-radius: 6rpx;
+    font-size:24rpx;
 }
 
-.dyt-list {
-  margin-top: 0;
+.phoneList{
+    background: #fff;
 }
-.dyt-list .am-list-item-thumb {
-  border-radius: 5px;
+.phoneList view{
+    height:85rpx;
+    line-height: 85rpx;
+    text-indent: 30rpx;
+    border-bottom:2rpx solid #eee;
+    font-size: 32rpx;
 }
-.dyt-list .am-list-brief {
-  color: #909090;
-}
-
-.dyt-list .am-list-extra {
-  color: #000;
-}
-
-.am-list-sticky {
-  position: sticky;
-  top: 0;
+.phoneList view:last-child,.nodata{
+    border-bottom: 0;
+    text-align: center;
+    text-indent: 0;
+    font-size: 26rpx;
+    color:#999;
+    padding-top:30rpx;
 }
