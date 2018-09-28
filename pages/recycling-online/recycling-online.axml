@@ -1,4 +1,25 @@
 <view>
+  <view class="article">
+    <view class="congratulat">
+    <image src="../../images/icons/cry.png" />
+    <view>
+      <view class="congratulat-txt">
+        暂无法享受信用回收服务，您可以选择在线回收和机器回收
+      </view>
+      <view class="grey">送您<text class="success">48小时换钱</text>特权，可选择机器回收或在线回收</view>
+    </view>
+  </view>
+  <!-- 回收方式 -->
+  <view class="recycl-method">
+    <view class="{{active?'method-active': ''}}" onTap="recyclingCredit">
+      <image src="../../images/icons/shop.png" />
+      <text>在线回收</text>
+    </view>
+    <view class="{{active? '':'method-active'}}" onTap="recyclingMachine">
+      <image src="../../images/icons/machine.png" style="width: 80rpx;" />
+      <text>机器回收</text>
+    </view>
+  </view>
   <form onSubmit="handleSubmit" class="page-submit-order">
     <view class="article">
       <view class="item-header">
@@ -73,11 +94,15 @@
         </view>
       </view>
     </view>
-    <!-- 提交 -->
-    <view class="footer">
-      <button form-type="submit" type="primary" size="defaultSize" style="border:none;background-color: #18AF78;"> 提交 </button>
+      <!-- footer -->
+  <view class="footer">
+    <view class="recycling-amount">
+      回收金额：￥{{creditAmount}}
     </view>
-    <!--  -->
+    <view class="submit-order" onTap="submitOrder">
+      提交订单
+    </view>
+  </view>
   </form>
 </view>
 

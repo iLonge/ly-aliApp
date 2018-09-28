@@ -16,7 +16,7 @@ App({
     return new Promise((resolve, reject) => {
       if (this.userInfo) resolve(this.userInfo);
       my.getAuthCode({
-        scopes: 'auth_user', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
+        scopes: 'auth_base', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
         success: (res) => {
            my.getAuthUserInfo({
             success: ({ nickName, avatar }) => {

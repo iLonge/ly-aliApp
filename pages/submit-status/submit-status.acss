@@ -15,7 +15,7 @@
 
 .status-success {
     margin: 0 20rpx;
-    padding: 40rpx  0rpx 80rpx;
+    padding: 40rpx  0rpx 60rpx;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
@@ -31,7 +31,15 @@
 
 .status-tips {
     font-size: 28rpx;
+    font-weight: 700;
     color: #666;
+}
+
+.status-tips image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
 }
 
 .express-tips {
@@ -49,6 +57,7 @@
 
 .condition-title {
     font-size: 32rpx;
+    font-weight: 700;
 }
 
 .zmxy {

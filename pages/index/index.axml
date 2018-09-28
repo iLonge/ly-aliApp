@@ -72,7 +72,7 @@
       </view>
       <view class="product-list">
         <block a:for="{{hotPhones}}" a:key="{{index}}">
-          <navigator url="../assess/assess?modalId={{item.id}}&brandId={{item.brandId}}" hover-class="navigator-hover">
+          <navigator url="../assess/assess?modalId={{item.id}}&brandId={{item.brandId}}&brandName={{item.brandName}}&modalName={{item.name}}" hover-class="navigator-hover">
           <view class="product-list-item">
             <image src="http://img.epbox.cn/images/{{item.image}}" /> 
             <view class="product-info"> 

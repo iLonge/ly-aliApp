@@ -3,10 +3,19 @@ var orderId;
 var creditAmount;
 var aliUserId =  app.globalData.alipayUserId;
 var riskPass; // 风险评估是否通过
+const utils = require('../../utils/utils.js');
 Page({
   data: {
     brandId: null,
     showBottom: false,
+  },
+   // 分享
+  onShareAppMessage() { 
+    return {
+      title: '壹站收',
+      desc: '壹站收小程序。',
+      path: 'pages/index/index'
+    };
   },
   onButtomBtnTap(e) {
     var type = e.currentTarget.dataset.type;
@@ -20,19 +29,18 @@ Page({
       // 根据 brandId 来判断安卓/苹果来显示popup内容
       if(this.data.brandId == 1) {
         popupContentList = [
-          '1.苹果磁盘基于单个文件进行加密',
-          '2.抹掉所有数据，等于抹掉所有文件',
-          '3.此前FBI也遇到了破解iphone的难题',
-          '作为普通用户，iphone的信息安全指的信赖。'
+          '1.苹果磁盘基于单个文件进行加密以iPhone为例，在iphone上所存储的每个文件都有单独随机生成的密钥进行加密。经过多层加密之后，文件才第一安全的存储iphone的磁盘上。',
+          '2.抹掉所有数据，等于抹掉所有文件用户抹掉数据以及所有设置之后，就等于抹掉了所有文件的密钥。如果想要恢复数据，就需要破解逐层加密。因此通过IPhone官方提供的抹掉数据和设置后被恢复的可能几乎为零。',
+          '3.此前FBI也遇到了破解iphone的难题作为普通用户，iphone的信息安全指的信赖。'
         ];
         popupTitle = "苹果安全小贴士";
         popupContent = '苹果手机只能恢复出厂设置，无须担心数据泄露风险，请当心，这是真的！美国FBI都破解不了。';
       }else {
         popupContentList = [
-          '1.删除手机相关账号及密码',
+          '1.删除手机相关账号及密码如开机密码,魅族Flyme，三星的账户,乐视账户等。',
           '2.恢复出厂重置手机。',
-          '4.信息重复覆盖技术，个人隐私不担忧。',
-          '通过电脑或者下载，存入一些无关紧要的文件或者视频，将硬盘空间占满，反复覆盖，数据恢复一般只能恢复最上层的数据，我们用一些无关紧要的内容把用户的个人信息覆盖，这样即便信息被恢复，也不会影响到个人隐私。'
+          '3.检查和取出手机中的内存卡和SIM卡',
+          '4.信息重复覆盖技术，个人隐私不担忧通过电脑或者下载，存入一些无关紧要的文件或者视频，将硬盘空间占满，反复覆盖，数据恢复一般只能恢复最上层的数据，我们用一些无关紧要的内容把用户的个人信息覆盖，这样即便信息被恢复，也不会影响到个人隐私。'
         ];
         popupTitle = "安卓安全小贴士";
         popupContent = '壹站收为保障您安卓手机/平板内的隐私，不在快递途中、质检和交易过程中被泄露，我们粉碎您的隐私，更以严格的政策来管理所有数据的处理方式。';
@@ -70,94 +78,100 @@ Page({
       showBottom: false
     });
   },
-  // 信用回收
-  creditRent() {
-    var that = this;
-    my.startZMCreditRent({
-      creditRentType: "creditRecycleRiskEvaluate",
-      category: "ZMSC_9_1_1", /** 保持不变 */
-      itemId: "2018071101000222123453435660",
-      outOrderNo: orderId,
-      amount: that.data.evalPrice,/** 回收物品评估价值 */
-      channel: "zm",
-      success: (res) => {
-        my.showLoading({
-          content: '加载中...'
-        });
-        let isPass = res.result.success;
-            riskPass = res.result.data.riskPass;
-            creditAmount = res.result.data.creditAmount;
-        // 1.支付宝小程序订单创建
-        let createParam = JSON.stringify({
-              "orderId": res.result.data.outOrderNo,
-              "zmOrderNo": res.result.data.zmOrderNo, 
-              "success":  isPass, 
-              "creditAmount": creditAmount,      // (预估值必传) 
-              "user_id": app.globalData.alipayUserId,              // (支付宝userId必传) 
-              "riskPass": riskPass,              // (风险评估是否通过) 
-              "zmRisk":"",                       // (N存在风险，不建议享受信用服务) 
-              "zmFace":"",    // (N芝麻认证失败，可能是非本人操作，不建议享受信用服务) 
-              "userName":"",  // (姓名) 
-              "mobile":"",    // (联系电话) 
-              "zmGrade":"",   // (较差、中等、良好、优秀、极好5个级别) 
-              "remark":""     // (备注) 
-            });
-        app.request.requestPostApi(app.apiUrl1 + 'alipay_applet/create_alipay_small_order', createParam, this, (res) => {
-          if(res.status == "SUCCESS") {
-            my.hideLoading();
-            that.setData({
-              creditAmount: creditAmount,
-            });
-          }
-        });
-
-        if(res.result.success) {
-          // 3.支付宝订单确认接口
-          let confirmParam = JSON.stringify({
-                "zmOrderNo": res.result.data.zmOrderNo,
-                "orderId": res.result.data.outOrderNo  
+  // 信用回收  handleSend: utils.throttle(function (e){ },1000),
+  creditRent: utils.throttle(function(){
+    let that = this;
+    let creditAmountParam = {
+      userId: app.globalData.alipayUserId,
+      evalPrice: that.data.evalPrice
+    }
+    app.request.requestGetApi('http://ittest.epbox.cn/channel_charge/api/zmxy/applets/unfinshOrder', creditAmountParam, this, (res) => {
+        if(res.status == "SUCCESS") {
+          
+          my.startZMCreditRent({
+            creditRentType: "creditRecycleRiskEvaluate",
+            category: "ZMSC_9_1_1", /** 保持不变 */
+            itemId: "2018071101000222123453435660",
+            outOrderNo: orderId,
+            amount: res.result,/** 回收物品评估价值 */
+            channel: "zm",
+            success: (res) => {
+              console.log(JSON.stringify(res))
+              let isPass = res.result.success;
+                  riskPass = res.result.data.riskPass;
+                  creditAmount = res.result.data.creditAmount;
+              // 1.支付宝小程序订单创建
+              let createParam = JSON.stringify({
+                    "orderId": res.result.data.outOrderNo,
+                    "zmOrderNo": res.result.data.zmOrderNo, 
+                    "success":  isPass, 
+                    "creditAmount": creditAmount,      // (预估值必传) 
+                    "user_id": app.globalData.alipayUserId,              // (支付宝userId必传) 
+                    "riskPass": riskPass,              // (风险评估是否通过) 
+                    "zmRisk":"",                       // (N存在风险，不建议享受信用服务) 
+                    "zmFace":"",    // (N芝麻认证失败，可能是非本人操作，不建议享受信用服务) 
+                    "userName":"",  // (姓名) 
+                    "mobile":"",    // (联系电话) 
+                    "zmGrade":"",   // (较差、中等、良好、优秀、极好5个级别) 
+                    "remark":""     // (备注) 
+                  });
+              app.request.requestPostApi(app.apiUrl1 + 'alipay_applet/create_alipay_small_order', createParam, this, (res) => {
+                if(res.status == "SUCCESS") {
+                  that.setData({
+                    creditAmount: creditAmount,
+                  });
+                }
               });
-          app.request.requestPostApi(app.apiUrl1 + 'alipay_applet/order_info_confirm', confirmParam, this, (res) => {
-            if(res.status == "SUCCESS") {
-              console.log('支付宝订单确认')
-            }
-          });
-          if(isPass && riskPass && creditAmount) {
-            // 4.修改支付宝小程序订单信息接口
-            let updateParam = JSON.stringify({
-                  "id": res.result.data.outOrderNo, // (订单id) 
-                  "prePayPrice": creditAmount      // (预付款值)
+              if(res.result.success) {
+                // 3.支付宝订单确认接口
+                let confirmParam = JSON.stringify({
+                      "zmOrderNo": res.result.data.zmOrderNo,
+                      "orderId": res.result.data.outOrderNo  
+                    });
+                app.request.requestPostApi(app.apiUrl1 + 'alipay_applet/order_info_confirm', confirmParam, this, (res) => {
+                  if(res.status == "SUCCESS") {
+                    console.log('支付宝订单确认')
+                  }
                 });
-            app.request.requestPostApi(app.apiUrl1 + 'orders/update_alipay_small_order', updateParam, this, (res) => {
-              if(res.status == "SUCCESS") {
-                // console.log('4.修改支付宝小程序订单信息接口SUCCESS')
-              }
-            },(err) => {console.log(err)});
+                if(isPass && riskPass && creditAmount) {
+                  // 4.修改支付宝小程序订单信息接口
+                  let updateParam = JSON.stringify({
+                        "id": res.result.data.outOrderNo, // (订单id) 
+                        "prePayPrice": creditAmount      // (预付款值)
+                      });
+                  app.request.requestPostApi(app.apiUrl1 + 'orders/update_alipay_small_order', updateParam, this, (res) => {
+                    if(res.status == "SUCCESS") {
+                      // console.log('4.修改支付宝小程序订单信息接口SUCCESS')
+                    }
+                  },(err) => {console.log(err)});
 
-            my.navigateTo({
-              // 跳转至确定订单页
-              url: '/pages/submit-order-detail/submit-order-detail?zmOrderNo='+res.result.data.zmOrderNo+'&outOrderNo='+res.result.data.outOrderNo+'&creditAmount='+res.result.data.creditAmount+'&amount='+that.data.evalPrice
-            })
-          } else {
-            my.alert({
-              title: '亲',
-              content: '信用评估失败',
-              buttonText: '我知道了'
-            });
-          }
-        }else{
-          my.showToast({
-            type: 'fail',
-            content: res.result.error.errorMsg,
-            duration: 2500
-          });
+                  my.navigateTo({
+                    // 跳转至确定订单页
+                    url: '/pages/submit-order-detail/submit-order-detail?zmOrderNo='+res.result.data.zmOrderNo+'&outOrderNo='+res.result.data.outOrderNo+'&creditAmount='+res.result.data.creditAmount+'&amount='+that.data.evalPrice
+                  })
+                } else {
+                  my.alert({
+                    title: '亲',
+                    content: '信用评估失败',
+                    buttonText: '我知道了'
+                  });
+                }
+              }else{
+                my.showToast({
+                  type: 'fail',
+                  content: res.result.error.errorMsg,
+                  duration: 2500
+                });
+              }
+            },
+            fail: (res) => {
+                console.log(JSON.stringify(res).error.errorMsg)
+            }
+          })
+
         }
-      },
-      fail: (res) => {
-          console.log(JSON.stringify(res).error.errorMsg)
-      }
-    })
-  },
+     });
+  },5000),
   successFun(res, selfObj) {
     console.log(res)
     if(res.status == "SUCCESS") {

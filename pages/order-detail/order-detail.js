@@ -9,6 +9,14 @@ Page({
     secondAlgorithmProcess: '', // 后台二次验机（质检详情）
     isReturn: false
   },
+    // 分享
+  onShareAppMessage() { 
+    return {
+      title: '壹站收',
+      desc: '壹站收小程序。',
+      path: 'pages/index/index'
+    };
+  },
   handlePaste(e) { // 复制
     let that = this;
     my.setClipboard({
@@ -137,12 +145,25 @@ Page({
       OrderParam,
       this,
       function (res,obj) {
-        if(res.status == "FAIL") {
+         if(res.status == "FAIL") {
           my.navigateTo({
             url:`/pages/assess-result/assess-result?orderId=${obj.data.orderId}`
           });
-        }else{
-          obj.aliOrderStatus();
+        }else if(res.status == "SUCCESS"){
+          if(res.result[0].riskPass == "true") {
+             let {zmOrderNo, creditAmount, evalPrice} = res.result[0];
+             console.log()
+            obj.setData({
+              zmOrderNo:  zmOrderNo,
+              creditAmount: creditAmount,
+              amount: evalPrice
+            });
+            obj.aliOrderStatus();
+          } else{
+            my.navigateTo({
+              url:`/pages/assess-result/assess-result?orderId=${obj.data.orderId}`
+            });
+          }
         }
       },
       function (err,obj){
@@ -161,7 +182,7 @@ Page({
       function (res,obj) {
         if(res.status == "FAIL") {
           my.navigateTo({
-            url:`/pages/submit-order-detail/submit-order-detail?outOrderNo=${obj.data.orderId}`
+            url:`/pages/submit-order-detail/submit-order-detail?outOrderNo=${obj.data.orderId}&zmOrderNo=${obj.data.zmOrderNo}&creditAmount=${obj.data.creditAmount}&amount=${obj.data.amount}`
           })
         }else{
           my.navigateTo({

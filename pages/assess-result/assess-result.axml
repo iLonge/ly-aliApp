@@ -17,10 +17,9 @@
           <text>预计下月降幅￥50</text>
         </view> -->
       </view>
-      <!-- <view class="tips" data-type="2" onTap="onButtomBtnTap" >
-        凭芝麻信用，提交信用回收订单先得70%回收款
-        <image src="../../images/icons/help.png" />
-      </view> -->
+      <view class="tips" data-type="2" onTap="onButtomBtnTap" >
+          手机回收市场价格实时变化，如您觉得价格合适请尽早回收
+      </view>
     </view>
     <view class="return">
       <image src="../../images/icons/aliIcon.png" />

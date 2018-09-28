@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
 }
 .congratulat {
     display: flex;
@@ -154,4 +155,27 @@ image.right,
     height: 120rpx;
     line-height: 120rpx;
     background-color: #18B078;
+}
+
+.map-modal {
+  position:absolute;
+  z-index:99999;
+  left:0;
+  top:0;
+  overflow:hidden;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.75);
+}
+
+.map-container {
+  postion:absolute;
+  margin:10% auto;
+  width:90%;
+  height: 90%;
+  text-align:center;
+}
+
+.close-modal {
+  margin: 40rpx  auto;
 }

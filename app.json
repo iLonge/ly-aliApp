@@ -18,7 +18,8 @@
     "pages/recycling-car/recycling-car",
     "pages/agreement/agreement",
     "pages/common-recycling-problems/common-recycling-problems",
-    "pages/return-address/return-address"
+    "pages/return-address/return-address",
+    "pages/recycling-online/recycling-online"
   ],
   "window": {
     "defaultTitle": "壹站收",
@@ -33,9 +34,9 @@
     "items": [
       {
         "pagePath": "pages/index/index",
-        "name": "个人中心",
-        "icon": "images/icons/index2.png",
-        "activeIcon": "images/icons/index1.png"
+        "name": "首页",
+        "icon": "images/icons/home.png",
+        "activeIcon": "images/icons/home1.png"
       },
       {
         "pagePath": "pages/order-center/order-center",

@@ -14,10 +14,11 @@ export function getNextAreaList(areaId,level) {
       dataType: 'json',
       headers: {
           'Content-Type': "application/json",
-          'cipher':my.getStorageSync({key:'alipay'}).data.cipher
+          'cipher':my.getStorageSync({key:'cipher'}).data
       },
       success(res){
           let list=[]
+          console.log(res)
           for(let item of res.data.result.rows){
               list.push({
                   id:item.id,//id对应地区ID

@@ -37,11 +37,10 @@ Page({
   // 选择开机关机
   selectPhoneState(e){
     const {value}=e.detail
-    const {modalId,brandId,funLookOption}=this.data
+    const {modalId,brandId,funLookOption,orderId}=this.data
     if(value=="1"){
-      this.setData({phoneState:true})
       // 获取小型号 
-       const modelDate=JSON.stringify({modelId:modalId}) 
+       const modelDate=JSON.stringify({modelId:modalId,brandId:brandId,orderId:orderId}) 
        app.request.requestPostApi(app.apiUrl + 'models/base_model_list', modelDate, this,(res,that)=>{
          if(res.status=="SUCCESS"){
            if(res.result.detailId==0){
@@ -110,6 +109,10 @@ Page({
            }
          }
        })
+        this.setData({
+          phoneState: true,
+          topSche: 0
+        })
     }else{
       this.setData({
         phoneState:false,
@@ -339,6 +342,7 @@ Page({
      const faq=faqStrArr.concat(funArr).join(":")
      //判断是否选择完成
      if(topSche!==100){
+       my.hideLoading();
        my.showToast({
           type: 'fail',
           content: '请选择评估项目',
@@ -368,6 +372,7 @@ Page({
             }
           })
         }else{
+          my.hideLoading();
           my.alert({
             title: '亲',
             content: '账户必须为已解锁',
@@ -380,9 +385,11 @@ Page({
 
 
   // 页面加载
-  onLoad(query) {
+  onLoad(query) {console.log(query)
     const {modalId,brandId,modalName,brandName}=query
-
+    my.setNavigationBar({
+      title: `${brandName} ${modalName}`,
+    });
     //存储型号与品牌ID
     this.setData({modalId:modalId,brandId:brandId,modelName:modalName,brandName:brandName})
 

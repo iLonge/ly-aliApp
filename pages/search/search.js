@@ -15,6 +15,15 @@ Page({
     this.setData({data:[],rowsState:true})
   },
 
+    // 分享
+  onShareAppMessage() { 
+    return {
+      title: '壹站收',
+      desc: '壹站收小程序。',
+      path: 'pages/index/index'
+    };
+  },
+
   // 用户搜索
   search(query){
     const {value}=query.detail

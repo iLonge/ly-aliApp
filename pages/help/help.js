@@ -18,7 +18,14 @@ Page({
       url:`/pages/help-detail/help-detail?id=${id}`
     })
   },
-
+  // 分享
+  onShareAppMessage() { 
+    return {
+      title: '壹站收',
+      desc: '壹站收小程序。',
+      path: 'pages/index/index'
+    };
+  },
   // 搜索
   getSearch(e){
     const {value}=e.detail

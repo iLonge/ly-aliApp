@@ -11,11 +11,11 @@
   </view>
   <!-- 回收方式 -->
   <view class="recycl-method">
-    <view class="method-active">
+    <view class="{{active?'method-active': ''}}" onTap="recyclingCredit">
       <image src="../../images/icons/recycl.png" />
       <text>信用回收</text>
     </view>
-    <!-- <view>
+    <!-- <view class="{{active? '':'method-active'}}" onTap="recyclingMachine">
       <image src="../../images/icons/recycl.png" />
       <text>机器回收</text>
     </view> -->
@@ -102,4 +102,20 @@
       提交订单
     </view>
   </view>
+
+  <view class="map-modal" a:if="{{showModal}}">
+    <view class="map-container">
+      <map id="map"
+       longitude="{{longitude}}"
+        latitude="{{latitude}}" scale="{{scale}}"
+        onControlTap="controltap" 
+        markers="{{markers}}"
+        onMarkerTap="markertap"
+        onRegionChange="regionchange"
+        show-location style="width: 100%; height: 420px;">
+      </map>
+        <button class="close-modal" type="default" size="mini" onTap="closeModal">关闭</button>
+      </view>
+    </view>
+    
 </view>

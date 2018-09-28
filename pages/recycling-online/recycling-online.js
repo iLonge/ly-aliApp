@@ -3,7 +3,6 @@ import { AreaPicker } from "../../components/areaSelector/selector.js"
 var app = getApp();
 var param = {};
 var time = CurentTime();
-console.log(time)
 Page(Object.assign({}, AreaPicker,{
   data: {
     expressArr: [],

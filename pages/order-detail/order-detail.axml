@@ -36,7 +36,7 @@
         </view>
         <view class="product-desc">
           <view> 
-            <text> {{algorithmProcess}} </text>
+            <text> {{secondAlgorithmProcess}} </text>
           </view>
           <!-- <text>2+32G</text> -->
         </view>
@@ -59,23 +59,23 @@
         <text>￥{{orderData.orderInfo.evalPrice}}</text>
       </view>
     </view>
-    <view class="product-money">
-      <!-- <view>
+    <view class="product-money" a:if="{{secondAlgorithmProcess}}">
+      <view>
         <text>凭芝麻信用获得预支金额:</text>
-        <text class="success">￥1000</text>
+        <text class="success">￥{{orderData.orderInfo.prePayPrice}}</text>
       </view>
       <view>
         <text>余额(质检后打款):</text>
-        <text class="danger">￥1000</text>
-      </view> -->
+        <text class="danger">￥{{(orderData.orderInfo.evalPrice - orderData.orderInfo.prePayPrice).toFixed(2)}}</text>
+      </view>
       <view>
         <text>质检后价格:</text>
-        <text class="success">￥{{orderData.orderInfo.evalPrice}}</text>
+        <text class="success">￥{{orderData.orderInfo.finaPrice}}</text>
       </view>
-      <!-- <view class="danger">
+      <view class="danger" a:if="{{(orderData.orderInfo.evalPrice-orderData.orderInfo.prePayPrice-orderData.orderInfo.finaPrice).toFixed(2)>0?true:false}}">
         <text>余额实付款:</text>
-        <text>￥1000</text>
-      </view> -->
+        <text>￥{{(orderData.orderInfo.evalPrice-orderData.orderInfo.prePayPrice-orderData.orderInfo.finaPrice).toFixed(2)}}</text>
+      </view>
       <view class="grey">
         说明: 质检后结算尾款,最终以商家质检价格为准,多退少补。
       </view>
@@ -106,7 +106,7 @@
         联系客服 
       </navigator>
     </button>
-    <button a:if="{{orderData.orderInfo.state ==='1' || orderData.orderInfo.state==='2' || orderData.orderInfo.state==='3'}}" type="default" onTap="handleSend" size="mini"> 
+    <button a:if="{{orderData.orderInfo.state ==='1' || orderData.orderInfo.state==='2' || orderData.orderInfo.state==='3'}}"  data-orderId="{{orderId}}"  type="default" onTap="handleSend" size="mini"> 
       发货 
     </button>
   </view>

@@ -2,6 +2,14 @@ var app = getApp();
 Page({
   data: {
   },
+   // 分享
+  onShareAppMessage() { 
+    return {
+      title: '壹站收',
+      desc: '壹站收小程序。',
+      path: 'pages/index/index'
+    };
+  },
   onLoad(query) {
     this.setData({
       orderId: query.orderId
@@ -16,11 +24,16 @@ Page({
       this,
       function (res,obj){
         if (res.status == "SUCCESS") {
-          let express = res.result.rows.map((item,index)=>{
-            return {companyId:item.companyId,expressCompany:item.expressCompany,id:item.id}
-          })
+          // let express = res.result.rows.map((item,index)=>{
+          //   return {companyId:item.companyId,expressCompany:item.expressCompany,id:item.id}
+          // })
+           let express = {
+                  companyId:res.result.rows[0].companyId,
+                  expressCompany:res.result.rows[0].expressCompany,
+                  id:res.result.rows[0].id
+                }
           obj.setData({
-            express: express
+            express: [express]
           })
         }        
       },

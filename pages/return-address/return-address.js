@@ -15,6 +15,14 @@ Page(Object.assign({}, AreaPicker,{
     district: "",//县 区
     //street: null,//村 街道 
   },
+    // 分享
+  onShareAppMessage() { 
+    return {
+      title: '壹站收',
+      desc: '壹站收小程序。',
+      path: 'pages/index/index'
+    };
+  },
   onAreaCommit(locationList) {//当用户更换地区
     this.setData({
       province: locationList[0] || {},

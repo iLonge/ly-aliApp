@@ -21,7 +21,14 @@ Page({
       ],
     },
   },
-
+  // 分享
+  onShareAppMessage() { 
+    return {
+      title: '壹站收',
+      desc: '壹站收小程序。',
+      path: 'pages/index/index'
+    };
+  },
   // 跳转搜索
   search(){
     my.navigateTo({

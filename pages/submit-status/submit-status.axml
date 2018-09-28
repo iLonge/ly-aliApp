@@ -7,20 +7,23 @@
           订单提交成功
         </view>
         <view class="status-tips">
-          最终以商家质检价格为准
+         <image src="../../images/icons/aliIcon.png" />
+         根据您的芝麻信用评估结果
+        </view>
+        <view class="grey">
+          发货成功后预付款金额将达到您的支付宝账户
         </view>
       </view>
       <view class="express-tips grey">
-        <text>顺丰即将上门收取快递</text>
-        <view>工作人员将会提前1小时与您联系，请保持手机畅通！</view>
+        <text>顺丰即将上门收取快递，请保持手机畅通！</text>
       </view>
     </view>
     
     <view class="condition">
-      <text class="condition-title">达成以下两点，可提高手机回收准确性</text>  
+      <text class="condition-title">达成以下两点，放款速度提高30%以上</text>  
       <view>
-        <text>请备份数据并最好恢复出产设置\n</text> 
-        <text>解锁手机密码并注销所有账户</text>
+        <text>1.请提前将您的机器充满电，方便快速质检\n</text> 
+        <text>2.请解除开机密码，iClond或手机云账号（小米，魅族等品牌），否则不能进行质检，影响最终价格。</text>
       </view>
     </view>
   </view>

@@ -24,3 +24,4 @@ require('../../pages/recycling-car/recycling-car');
 require('../../pages/agreement/agreement');
 require('../../pages/common-recycling-problems/common-recycling-problems');
 require('../../pages/return-address/return-address');
+require('../../pages/recycling-online/recycling-online');

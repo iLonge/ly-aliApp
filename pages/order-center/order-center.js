@@ -17,13 +17,22 @@ Page({
     orderList: [],
     newList: []
   }, 
+   // 分享
+  onShareAppMessage() { 
+    return {
+      title: '壹站收',
+      desc: '壹站收小程序。',
+      path: 'pages/index/index'
+    };
+  },
   getList() { // 获取订单列表
     let {alipayUserId} = my.getStorageSync({ key: 'alipay' }).data;
     let param = JSON.stringify({
-      "pageSize": 20,
+      "pageSize": 40,
 	    "pageIndex": 1,
       "aliUserId": alipayUserId,
-      "state": 1
+      "state": 1,
+      "smallSourceId":  13
     });
     app.request.requestPostApi(app.apiUrl1 + 'minbox_orders/wechat_list', param, this, this.successFun);
   },
@@ -57,7 +66,7 @@ Page({
                     that.setData({
                       isCancle: res.result
                     })
-                    that.onReady()
+                    that.onShow();
                   }
                 });
               }
@@ -81,7 +90,7 @@ Page({
       url:`/pages/order-detail/order-detail?orderId=${id}`
     })
   },
-  onReady() {
+  onShow() {
     my.showLoading({
       content: '加载中...'
     });
@@ -101,7 +110,6 @@ Page({
       }
       
       if(selfObj.data.activeTab == "0") {
-        my.hideLoading();
         selfObj.setData({
           orderList: selfObj.setData({orderList: waitDeal})
         });
@@ -110,7 +118,7 @@ Page({
           orderList: selfObj.setData({orderList: newList})
         });
       }
-      
+      my.hideLoading();
     }
   },
   handleTabClick({ index }) {
@@ -179,14 +187,21 @@ Page({
           my.navigateTo({
             url:`/pages/assess-result/assess-result?orderId=${obj.data.orderId}`
           });
-        }else{
-          let {zmOrderNo, creditAmount, evalPrice} = res.result[0];
-          obj.setData({
-            zmOrderNo:  zmOrderNo,
-            creditAmount: creditAmount,
-            amount: evalPrice
-          });
-          obj.aliOrderStatus();
+        }else if(res.status == "SUCCESS"){
+          if(res.result[0].riskPass == "true") {
+             let {zmOrderNo, creditAmount, evalPrice} = res.result[0];
+            obj.setData({
+              zmOrderNo:  zmOrderNo,
+              creditAmount: creditAmount,
+              amount: evalPrice
+            });
+            obj.aliOrderStatus();
+          } else{
+            my.navigateTo({
+              url:`/pages/assess-result/assess-result?orderId=${obj.data.orderId}`
+            });
+          }
+         
         }
       },
       function (err,obj){
